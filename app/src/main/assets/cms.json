@@ -1,0 +1,287 @@
+{
+  "boot_time_apis": [],
+  "screens": [
+    {
+      "screen_id": "screen_0",
+      "screen_display_name": "Navigation Drawer Screen",
+      "screen_type": "navigation_drawer",
+      "item_orientation": "vertical",
+      "table_name": "table_1",
+      "container": [
+        {
+          "container_name": "profile_section",
+          "container_background_color": "#f3f5f6",
+          "item_orientation": "horizontal",
+          "item_weight": "15",
+          "container": [
+            {
+              "container_name": "profile_image_subsection",
+              "container_background_color": "#f3f5f6",
+              "components": [
+                {
+                  "component_type": "image_view",
+                  "component_key_name": "profile_pic_component",
+                  "component_label": "",
+                  "component_background_color": "",
+                  "component_font_color": "",
+                  "item_weight": "15"
+                }
+              ]
+            },
+            {
+              "container_name": "profile_name",
+              "container_background_color": "#f3f5f6",
+              "components": [
+                {
+                  "component_type": "text_view",
+                  "component_key_name": "profile_name",
+                  "component_label": "",
+                  "component_background_color": "",
+                  "component_font_color": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "container_name": "left_menu_section",
+          "container_background_color": "#f3f5f6",
+          "container": [
+            {
+              "container_name": "settings_subsection",
+              "container_background_color": "#f3f5f6",
+              "components": [
+                {
+                  "component_type": "text_view",
+                  "component_key_name": "expense_component",
+                  "component_label": "About",
+                  "component_background_color": "",
+                  "component_font_color": "",
+                  "component_icon": "component_icon"
+                },
+                {
+                  "component_type": "text_view",
+                  "component_key_name": "setting_component",
+                  "component_label": "Settings",
+                  "component_background_color": "",
+                  "component_font_color": "",
+                  "component_icon": "component_icon"
+                },
+                {
+                  "component_type": "text_view",
+                  "component_key_name": "logout_component",
+                  "component_label": "Log Out",
+                  "component_background_color": "",
+                  "component_font_color": "",
+                  "component_icon": "http://cdn.1001freedownloads.com/icon/thumb/394849/Mario-icon.png"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "screen_id": "screen_1",
+      "screen_display_name": "Expense Dashboard Screen",
+      "table_name": "table_1",
+      "screen_type": "general_screen",
+      "item_orientation": "vertical",
+      "container": [
+        {
+          "container_name": "toolbar",
+          "item_orientation": "horizontal",
+          "container_background_color": "#F0F0F0",
+          "item_weight":".15f",
+          "weight_sum":"1",
+          "container": [
+            {
+              "container_name": "left_toolbar",
+              "container_background_color": "#00FF00",
+              "item_weight":".2f",
+              "components": [
+                {
+                  "component_type": "image_view",
+                  "component_key_name": "",
+                  "component_label": "",
+                  "component_background_color": "#FF0000",
+                  "component_font_color": "#CC000000",
+                  "component_icon": "back_arrow"
+                }
+              ]
+            },
+            {
+              "container_name": "center_toolbar",
+              "container_background_color": "#FFFF00",
+              "item_weight":".6f",
+              "weight_sum":"1",
+              "components": [
+                {
+                  "component_type": "text_view",
+                  "component_key_name": "",
+                  "component_label": "Business Expenses Report",
+                  "component_background_color": "#00FF00",
+                  "component_font_color": "#CC000000"
+                }
+              ]
+            },
+            {
+              "container_name": "right_toolbar",
+              "container_background_color": "#F0F0F0",
+              "item_weight":".2f",
+              "components": [
+                {
+                  "component_type": "image_view",
+                  "component_key_name": "",
+                  "component_label": "",
+                  "component_background_color": "#0000FF",
+                  "component_font_color": "#CC000000",
+                  "component_icon": "menu_icon"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "container_name": "content_container",
+          "container_background_color": "#FFFFFF",
+          "item_orientation": "vertical",
+          "item_weight": ".7f",
+          "weight_sum":"1",
+          "container": [
+            {
+              "container_name": "top_container",
+              "container_background_color": "#ff0000",
+              "item_orientation": "vertical",
+              "item_weight": ".3f",
+              "weight_sum":"1",
+              "components": [
+                {
+                  "component_type": "text_view",
+                  "component_key_name": "",
+                  "component_label": "Barcode",
+                  "component_background_color": "",
+                  "component_font_color": "#D9000000",
+                  "item_weight": ".33f"
+                },
+                {
+                  "component_type": "eidt_text",
+                  "component_key_name": "barcode_scan",
+                  "component_label": "",
+                  "component_hint": "Scan a item",
+                  "component_background_color": "",
+                  "component_font_color": "#D9000000",
+                  "item_weight": ".33f"
+                },
+                {
+                  "component_type": "text_view",
+                  "component_key_name": "",
+                  "component_label": "Scan Count:",
+                  "component_background_color": "",
+                  "component_font_color": "#D9000000",
+                  "item_weight": ".33f"
+                }
+              ]
+            },
+            {
+              "container_name": "bottom_container",
+              "container_background_color": "#00FF00",
+              "item_orientation": "vertical",
+              "item_weight": ".7f",
+              "weight_sum":"1",
+              "components": [
+                {
+                  "component_type": "composite",
+                  "component_id": "horizontal_label_label",
+                  "item_orientation": "horizontal",
+                  "component_background_color": "",
+                  "weight_sum":"1",
+                  "components": [
+                    {
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Description",
+                      "component_background_color": "",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".3f"
+                    },
+                    {
+                      "component_type": "text_view",
+                      "component_key_name": "description",
+                      "component_label": "description_key",
+                      "component_background_color": "",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".7f"
+                    }
+                  ]
+                },
+                {
+                  "component_type": "composite",
+                  "component_id": "horizontal_label_label",
+                  "item_orientation": "horizontal",
+                  "component_background_color": "",
+                  "weight_sum":"1",
+                  "components": [
+                    {
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Mark No.",
+                      "component_background_color": "",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".3f"
+                    },
+                    {
+                      "component_type": "text_view",
+                      "component_key_name": "mark_value",
+                      "component_label": "mark_key",
+                      "component_background_color": "",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".7f"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "container_name": "bottom_container",
+          "container_background_color": "#0000FF",
+          "item_orientation": "horizontal",
+          "item_weight": ".15f",
+          "components": [
+            {
+              "component_type": "button",
+              "component_key_name": "",
+              "component_label": "Remove",
+              "component_background_color": "#000000",
+              "component_font_color": "#FFFFFF",
+              "item_weight": ".5f"
+            },
+            {
+              "component_type": "button",
+              "component_key_name": "",
+              "component_label": "Add",
+              "component_background_color": "#000000",
+              "component_font_color": "#FFFFFF",
+              "item_weight": ".5f"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "database_tables": [
+    {
+      "table_name": "expense_list_table",
+      "fields": []
+    },
+    {
+      "table_name": "expense_detail_table",
+      "fields": []
+    }
+  ],
+  "status_messages": [],
+  "data_status_code": [],
+  "keys": []
+}
