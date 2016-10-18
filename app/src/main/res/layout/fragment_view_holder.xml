@@ -4,16 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
+    android:clickable="true"
     android:orientation="vertical">
 
 
-    <Button
+    <!--<Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="New Button"
         android:layout_weight=".1"
-        android:id="@+id/button" />
+        android:id="@+id/test_button" />-->
 
     <!--<TextView
         android:layout_width="0dp"

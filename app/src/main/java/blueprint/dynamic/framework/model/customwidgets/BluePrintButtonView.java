@@ -4,12 +4,13 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.AppCompatTextView;
+import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
@@ -19,36 +20,34 @@ import blueprint.dynamic.framework.model.cms_model.ComponentElement;
 import blueprint.dynamic.framework.ui_engine.ComponentHelper;
 import blueprint.dynamic.framework.ui_engine.listeners.OnSwipeTouchListener;
 import blueprint.dynamic.framework.utils.AppUtils;
-import blueprint.dynamic.framework.utils.Constants;
 
 /**
- * Created by Techjini on 10/10/2016.
+ * Created by Techjini on 10/17/2016.
  */
-public class BluePrintTextView extends AppCompatTextView {
-
+public class BluePrintButtonView extends Button {
     private Context mContext;
 
-    public BluePrintTextView(Context context) {
+    public BluePrintButtonView(Context context) {
         super(context);
         mContext = context;
     }
 
-    public BluePrintTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public BluePrintButtonView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mContext = context;
     }
 
-    public BluePrintTextView(Context context, AttributeSet attrs) {
+    public BluePrintButtonView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
     }
 
     public void setComponent(ComponentElement componentElement, ViewGroup parentLayout,
                              String parent_orientation, OnSwipeTouchListener listener) {
-        this.setId(AppUtils.getNextUniqueIndex());
-        if(listener != null) {
-            setOnTouchListener(listener);
-        }
+        int id = AppUtils.getNextUniqueIndex();
+        System.out.println("BluePrintButtonView.setComponent-id---:"+id);
+        this.setId(id);
+
         ComponentHelper.setLayoutParamsAndOrientation(mContext, this, componentElement, parent_orientation);
 
         if (parentLayout instanceof LinearLayout) {
@@ -68,14 +67,28 @@ public class BluePrintTextView extends AppCompatTextView {
         }
 
         setComponentColors(componentElement);
+        if(listener != null) {
+            setOnTouchListener(listener);
+        }
+        /*setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("BluePrintButtonView.onClick--id--"+view.getId());
+            }
+        });*/
 
         System.out.println("BluePrintTextView.setComponent---"+componentElement.getComponent_label());
         parentLayout.addView(this);
-        this.setOnTouchListener(listener);
     }
 
+
+    /*@Override
+    public boolean onTouchEvent(MotionEvent event) {
+        System.out.println("BluePrintButtonView.onTouchEvent----"+this.getId());
+        return super.onTouchEvent(event);
+    }*/
+
     public void setComponentColors(ComponentElement componentElement) {
-        setClickable(true);
         if (componentElement.getComponent_font_color() != null) {
             setTextColor(!componentElement.getComponent_font_color().isEmpty() ? Color.parseColor(componentElement.getComponent_font_color()) : ContextCompat.getColor(mContext, R.color.default_font_color));
             setTextColor(ContextCompat.getColor(mContext, R.color.default_font_color));
@@ -102,6 +115,4 @@ public class BluePrintTextView extends AppCompatTextView {
             setBackgroundColor(!componentElement.getComponent_background_color().isEmpty() ? Color.parseColor(componentElement.getComponent_background_color()) : ContextCompat.getColor(mContext, R.color.color_000000_100));
         }
     }
-
-
 }

@@ -92,13 +92,13 @@
           "container_name": "toolbar",
           "item_orientation": "horizontal",
           "container_background_color": "#F0F0F0",
-          "item_weight":".15f",
-          "weight_sum":"1",
+          "item_weight": ".15f",
+          "weight_sum": "1",
           "container": [
             {
               "container_name": "left_toolbar",
               "container_background_color": "#00FF00",
-              "item_weight":".2f",
+              "item_weight": ".2f",
               "components": [
                 {
                   "component_type": "image_view",
@@ -113,8 +113,8 @@
             {
               "container_name": "center_toolbar",
               "container_background_color": "#FFFF00",
-              "item_weight":".6f",
-              "weight_sum":"1",
+              "item_weight": ".6f",
+              "weight_sum": "1",
               "components": [
                 {
                   "component_type": "text_view",
@@ -128,7 +128,7 @@
             {
               "container_name": "right_toolbar",
               "container_background_color": "#F0F0F0",
-              "item_weight":".2f",
+              "item_weight": ".2f",
               "components": [
                 {
                   "component_type": "image_view",
@@ -147,20 +147,20 @@
           "container_background_color": "#FFFFFF",
           "item_orientation": "vertical",
           "item_weight": ".7f",
-          "weight_sum":"1",
+          "weight_sum": "1",
           "container": [
             {
               "container_name": "top_container",
               "container_background_color": "#ff0000",
               "item_orientation": "vertical",
               "item_weight": ".3f",
-              "weight_sum":"1",
+              "weight_sum": "1",
               "components": [
                 {
                   "component_type": "text_view",
                   "component_key_name": "",
                   "component_label": "Barcode",
-                  "component_background_color": "",
+                  "component_background_color": "#FFFF00",
                   "component_font_color": "#D9000000",
                   "item_weight": ".33f"
                 },
@@ -169,7 +169,7 @@
                   "component_key_name": "barcode_scan",
                   "component_label": "",
                   "component_hint": "Scan a item",
-                  "component_background_color": "",
+                  "component_background_color": "#FFFF00",
                   "component_font_color": "#D9000000",
                   "item_weight": ".33f"
                 },
@@ -177,7 +177,7 @@
                   "component_type": "text_view",
                   "component_key_name": "",
                   "component_label": "Scan Count:",
-                  "component_background_color": "",
+                  "component_background_color": "#FFFF00",
                   "component_font_color": "#D9000000",
                   "item_weight": ".33f"
                 }
@@ -188,14 +188,14 @@
               "container_background_color": "#00FF00",
               "item_orientation": "vertical",
               "item_weight": ".7f",
-              "weight_sum":"1",
+              "weight_sum": "1",
               "components": [
                 {
                   "component_type": "composite",
                   "component_id": "horizontal_label_label",
                   "item_orientation": "horizontal",
                   "component_background_color": "",
-                  "weight_sum":"1",
+                  "weight_sum": "1",
                   "components": [
                     {
                       "component_type": "text_view",
@@ -220,7 +220,7 @@
                   "component_id": "horizontal_label_label",
                   "item_orientation": "horizontal",
                   "component_background_color": "",
-                  "weight_sum":"1",
+                  "weight_sum": "1",
                   "components": [
                     {
                       "component_type": "text_view",
@@ -254,7 +254,7 @@
               "component_type": "button",
               "component_key_name": "",
               "component_label": "Remove",
-              "component_background_color": "#000000",
+              "component_background_color": "#FFFF00",
               "component_font_color": "#FFFFFF",
               "item_weight": ".5f"
             },
@@ -262,7 +262,7 @@
               "component_type": "button",
               "component_key_name": "",
               "component_label": "Add",
-              "component_background_color": "#000000",
+              "component_background_color": "#FFFF00",
               "component_font_color": "#FFFFFF",
               "item_weight": ".5f"
             }
