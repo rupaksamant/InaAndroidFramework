@@ -30,6 +30,13 @@ public class Constants {
         public static final String NORMAL = "normal";
     }
 
+    public static class ContainerType {
+        public static final String HORIZONTAL_SCROLL_LAYOUT = "horizontal_scroll_view";
+        public static final String VERTICAL_SCROLL_LAYOUT = "vertical_scroll_view";
+        public static final String LINEAR_LAYOUT = "linear";
+        public static final String RELATIVE_LAYOUT = "relative";
+    }
+
     public static class Orientation {
         public static final String VERTICAL = "vertical";
         public static final String HORIZONTAL = "horizontal";

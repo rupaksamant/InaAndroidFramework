@@ -1,8 +1,11 @@
 package blueprint.dynamic.framework.model.cms_model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
  * Created by Techjini on 10/19/2016.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ApiElement {
     private java.lang.String storage_type;
 
@@ -42,6 +45,16 @@ public class ApiElement {
 
     public Api_input_parameterElement[] getApi_input_parameters() {
         return api_input_parameters;
+    }
+
+    private java.lang.String api_input_type;
+
+    public void setApi_input_type(java.lang.String api_input_type) {
+        this.api_input_type = api_input_type;
+    }
+
+    public java.lang.String getApi_input_type() {
+        return api_input_type;
     }
 
 }

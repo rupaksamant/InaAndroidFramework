@@ -7,29 +7,29 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RootCms {
-	private Object[] boot_time_apis;
+	private ApiElement[] apis;
 
- 	public void setBoot_time_apis(Object[] boot_time_apis) {
-		this.boot_time_apis = boot_time_apis;
+	public void setApis(ApiElement[] apis) {
+		this.apis = apis;
 	}
 
-	public Object[] getBoot_time_apis() {
-		return boot_time_apis;
+	public ApiElement[] getApis() {
+		return apis;
 	}
 
-	private Object[] keys;
+	private java.lang.Object[] keys;
 
- 	public void setKeys(Object[] keys) {
+	public void setKeys(java.lang.Object[] keys) {
 		this.keys = keys;
 	}
 
-	public Object[] getKeys() {
+	public java.lang.Object[] getKeys() {
 		return keys;
 	}
 
 	private Database_tablElement[] database_tables;
 
- 	public void setDatabase_tables(Database_tablElement[] database_tables) {
+	public void setDatabase_tables(Database_tablElement[] database_tables) {
 		this.database_tables = database_tables;
 	}
 
@@ -37,19 +37,19 @@ public class RootCms {
 		return database_tables;
 	}
 
-	private Object[] status_messages;
+	private java.lang.Object[] status_messages;
 
- 	public void setStatus_messages(Object[] status_messages) {
+	public void setStatus_messages(java.lang.Object[] status_messages) {
 		this.status_messages = status_messages;
 	}
 
-	public Object[] getStatus_messages() {
+	public java.lang.Object[] getStatus_messages() {
 		return status_messages;
 	}
 
 	private ScreenElement[] screens;
 
- 	public void setScreens(ScreenElement[] screens) {
+	public void setScreens(ScreenElement[] screens) {
 		this.screens = screens;
 	}
 
@@ -57,13 +57,13 @@ public class RootCms {
 		return screens;
 	}
 
-	private Object[] data_status_code;
+	private java.lang.Object[] data_status_code;
 
- 	public void setData_status_code(Object[] data_status_code) {
+	public void setData_status_code(java.lang.Object[] data_status_code) {
 		this.data_status_code = data_status_code;
 	}
 
-	public Object[] getData_status_code() {
+	public java.lang.Object[] getData_status_code() {
 		return data_status_code;
 	}
 

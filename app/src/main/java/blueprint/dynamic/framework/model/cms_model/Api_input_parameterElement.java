@@ -1,8 +1,11 @@
 package blueprint.dynamic.framework.model.cms_model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
  * Created by Techjini on 10/19/2016.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Api_input_parameterElement {
     private java.lang.String value_from;
 

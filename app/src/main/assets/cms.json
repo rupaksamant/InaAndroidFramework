@@ -342,14 +342,24 @@
               "item_weight": ".5f",
               "apis": [
                 {
-                  "api_url": "http://192.168.26.20:9010/api/UserMasterFilterDetail",
+                  "api_url": "http://192.168.26.20:9010/api/User",
+                  "api_input_type": "multipart",
                   "api_input_parameters": [
                     {
-                      "api_input_parameter_name": "emp_id"
+                      "key_name": "data",
+                      "value_from": "data"
+                    },
+                    {
+                      "key_name": "From",
+                      "value_from": "From"
+                    },
+                    {
+                      "key_name": "To",
+                      "value_from": "To"
                     }
                   ],
-                  "storage_type": "db",
-                  "storage_field_name": "tasklist_filer_table"
+                  "storage_type": "preference",
+                  "storage_field_name": "person_id"
                 }
               ]
             }
