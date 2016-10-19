@@ -18,7 +18,7 @@ import blueprint.dynamic.framework.model.cms_model.RootCms;
 /**
  * Created by Techjini on 10/6/2016.
  */
-public class AppUtils {
+public class Utils {
 
     private static AtomicInteger counter = new AtomicInteger();
 
@@ -90,5 +90,13 @@ public class AppUtils {
             e.printStackTrace();
         }
         return response;
+    }
+
+    public static int getIdFromString(Context context, String sId) {
+        if(sId != null && sId.isEmpty() == false) {
+            return context.getResources().getIdentifier(sId,  "id", context.getPackageName());
+        } else {
+            return 0;
+        }
     }
 }

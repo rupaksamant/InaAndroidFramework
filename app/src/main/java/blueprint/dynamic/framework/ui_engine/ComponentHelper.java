@@ -1,18 +1,12 @@
 package blueprint.dynamic.framework.ui_engine;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.GradientDrawable;
-import android.support.v4.content.ContextCompat;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
 
 import com.dynamic.framework.R;
 
 import blueprint.dynamic.framework.model.cms_model.ComponentElement;
-import blueprint.dynamic.framework.model.customwidgets.BluePrintTextView;
-import blueprint.dynamic.framework.utils.AppUtils;
 import blueprint.dynamic.framework.utils.Constants;
 
 /**
@@ -72,7 +66,7 @@ public class ComponentHelper {
             } else {
                 if (componentElement.getComponent_background_color() != null) {
                     setBackground(ContextCompat.getDrawable(context, R.drawable.layerlist_rounded_rect_ffffff_6eacda_stroke));
-                    GradientDrawable drawable1 = AppUtils.getGradientDrawable(context, !componentElement.getComponent_background_color().isEmpty() ? Color.parseColor(componentElement.getComponent_background_color()) : ContextCompat.getColor(mContext, R.color.color_000000_100),
+                    GradientDrawable drawable1 = Utils.getGradientDrawable(context, !componentElement.getComponent_background_color().isEmpty() ? Color.parseColor(componentElement.getComponent_background_color()) : ContextCompat.getColor(mContext, R.color.color_000000_100),
                             !componentElement.getComponent_border_color().isEmpty()
                                     ? Color.parseColor(componentElement.getComponent_border_color())
                                     : ContextCompat.getColor(context, R.color.color_36415D), view);

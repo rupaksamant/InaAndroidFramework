@@ -4,7 +4,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
 import android.view.MotionEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -29,10 +28,6 @@ import org.apache.http.protocol.HttpContext;
 
 import java.io.IOException;
 import java.io.InputStream;
-
-
-import blueprint.dynamic.framework.model.cms_model.RootCms;
-import blueprint.dynamic.framework.utils.AppUtils;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

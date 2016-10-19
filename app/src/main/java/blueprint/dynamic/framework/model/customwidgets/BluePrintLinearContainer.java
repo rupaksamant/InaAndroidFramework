@@ -14,8 +14,8 @@ import com.dynamic.framework.R;
 import blueprint.dynamic.framework.model.cms_model.ComponentElement;
 import blueprint.dynamic.framework.model.cms_model.ContainerElement;
 import blueprint.dynamic.framework.ui_engine.listeners.OnSwipeTouchListener;
-import blueprint.dynamic.framework.utils.AppUtils;
 import blueprint.dynamic.framework.utils.Constants;
+import blueprint.dynamic.framework.utils.Utils;
 
 /**
  * Created by Techjini on 10/10/2016.
@@ -43,7 +43,8 @@ public class BluePrintLinearContainer extends LinearLayout {
     }
 
     public void setComponent(ContainerElement containerElement, ViewGroup parentLayout, String parent_item_orientation, OnSwipeTouchListener listener) {
-        this.setId(AppUtils.getNextUniqueIndex());
+        System.out.println("BluePrintLinearContainer.setComponent contianer id---:"+ Utils.getIdFromString(mContext, containerElement.getItem_id()));
+        this.setId(Utils.getIdFromString(mContext, containerElement.getItem_id()));
         setClickable(true);
         setOrientationAndLayoutParams(containerElement.getItem_orientation(),
                 containerElement.getItem_weight(),

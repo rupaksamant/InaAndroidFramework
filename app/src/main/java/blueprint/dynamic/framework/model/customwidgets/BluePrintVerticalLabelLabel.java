@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import com.dynamic.framework.R;
 
 import blueprint.dynamic.framework.model.cms_model.ComponentElement;
-import blueprint.dynamic.framework.utils.AppUtils;
+import blueprint.dynamic.framework.utils.Utils;
 
 /**
  * Created by Techjini on 10/10/2016.
@@ -33,12 +33,12 @@ public class BluePrintVerticalLabelLabel /*extends View*/ {
     }*/
 
     public void setComponent(ComponentElement component, ViewGroup parentView, String parent_orientation) {
-//        this.setId(AppUtils.getNextUniqueIndex());
+//        this.setId(Utils.getNextUniqueIndex());
 
         LayoutInflater inflater = (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         LinearLayout view = (LinearLayout) inflater.inflate(R.layout.vertical_label_label, parentView, true);
-        view.setId(AppUtils.getNextUniqueIndex());
+        view.setId(Utils.getNextUniqueIndex());
 
         if(component.getItem_weight() != null) {
             LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) view.getLayoutParams();

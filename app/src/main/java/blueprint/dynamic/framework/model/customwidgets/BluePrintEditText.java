@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.AppCompatEditText;
 import android.util.AttributeSet;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -13,7 +12,7 @@ import android.widget.RelativeLayout;
 import com.dynamic.framework.R;
 
 import blueprint.dynamic.framework.model.cms_model.ComponentElement;
-import blueprint.dynamic.framework.utils.AppUtils;
+import blueprint.dynamic.framework.utils.Utils;
 
 /**
  * Created by Techjini on 10/10/2016.
@@ -37,7 +36,7 @@ public class BluePrintEditText extends AppCompatEditText {
     }
 
     public void setComponent(ComponentElement componentElement, ViewGroup view) {
-        this.setId(AppUtils.getNextUniqueIndex());
+        this.setId(Utils.getIdFromString(mContext, componentElement.getItem_id()));
         if(view instanceof LinearLayout) {
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             layoutParams.setMargins(0, 0, (int) mContext.getResources().getDimension(R.dimen.dimen_10_dp), 0);

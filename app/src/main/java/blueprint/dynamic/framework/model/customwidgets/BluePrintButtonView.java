@@ -4,11 +4,8 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
 import android.view.Gravity;
-import android.view.MotionEvent;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -19,7 +16,7 @@ import com.dynamic.framework.R;
 import blueprint.dynamic.framework.model.cms_model.ComponentElement;
 import blueprint.dynamic.framework.ui_engine.ComponentHelper;
 import blueprint.dynamic.framework.ui_engine.listeners.OnSwipeTouchListener;
-import blueprint.dynamic.framework.utils.AppUtils;
+import blueprint.dynamic.framework.utils.Utils;
 
 /**
  * Created by Techjini on 10/17/2016.
@@ -44,9 +41,8 @@ public class BluePrintButtonView extends Button {
 
     public void setComponent(ComponentElement componentElement, ViewGroup parentLayout,
                              String parent_orientation, OnSwipeTouchListener listener) {
-        int id = AppUtils.getNextUniqueIndex();
-        System.out.println("BluePrintButtonView.setComponent-id---:"+id);
-        this.setId(id);
+        System.out.println("BluePrintButtonView.setComponent-id---:"+Utils.getIdFromString(mContext, componentElement.getItem_id()));
+        this.setId(Utils.getIdFromString(mContext, componentElement.getItem_id()));
 
         ComponentHelper.setLayoutParamsAndOrientation(mContext, this, componentElement, parent_orientation);
 
@@ -104,7 +100,7 @@ public class BluePrintButtonView extends Button {
             } else {
                 if (componentElement.getComponent_background_color() != null) {
                     setBackground(ContextCompat.getDrawable(mContext, R.drawable.layerlist_rounded_rect_ffffff_6eacda_stroke));
-                    GradientDrawable drawable1 = AppUtils.getGradientDrawable(mContext, !componentElement.getComponent_background_color().isEmpty() ? Color.parseColor(componentElement.getComponent_background_color()) : ContextCompat.getColor(mContext, R.color.color_000000_100),
+                    GradientDrawable drawable1 = Utils.getGradientDrawable(mContext, !componentElement.getComponent_background_color().isEmpty() ? Color.parseColor(componentElement.getComponent_background_color()) : ContextCompat.getColor(mContext, R.color.color_000000_100),
                             !componentElement.getComponent_border_color().isEmpty()
                                     ? Color.parseColor(componentElement.getComponent_border_color())
                                     : ContextCompat.getColor(mContext, R.color.color_36415D), this);

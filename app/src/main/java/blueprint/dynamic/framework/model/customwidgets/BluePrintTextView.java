@@ -7,8 +7,6 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.view.Gravity;
-import android.view.MotionEvent;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -18,8 +16,7 @@ import com.dynamic.framework.R;
 import blueprint.dynamic.framework.model.cms_model.ComponentElement;
 import blueprint.dynamic.framework.ui_engine.ComponentHelper;
 import blueprint.dynamic.framework.ui_engine.listeners.OnSwipeTouchListener;
-import blueprint.dynamic.framework.utils.AppUtils;
-import blueprint.dynamic.framework.utils.Constants;
+import blueprint.dynamic.framework.utils.Utils;
 
 /**
  * Created by Techjini on 10/10/2016.
@@ -45,7 +42,8 @@ public class BluePrintTextView extends AppCompatTextView {
 
     public void setComponent(ComponentElement componentElement, ViewGroup parentLayout,
                              String parent_orientation, OnSwipeTouchListener listener) {
-        this.setId(AppUtils.getNextUniqueIndex());
+        System.out.println("BluePrintTextView.setComponent---tv id---:"+Utils.getIdFromString(mContext, componentElement.getItem_id()));
+        this.setId(Utils.getIdFromString(mContext, componentElement.getItem_id()));
         if(listener != null) {
             setOnTouchListener(listener);
         }
@@ -91,7 +89,7 @@ public class BluePrintTextView extends AppCompatTextView {
             } else {
                 if (componentElement.getComponent_background_color() != null) {
                     setBackground(ContextCompat.getDrawable(mContext, R.drawable.layerlist_rounded_rect_ffffff_6eacda_stroke));
-                    GradientDrawable drawable1 = AppUtils.getGradientDrawable(mContext, !componentElement.getComponent_background_color().isEmpty() ? Color.parseColor(componentElement.getComponent_background_color()) : ContextCompat.getColor(mContext, R.color.color_000000_100),
+                    GradientDrawable drawable1 = Utils.getGradientDrawable(mContext, !componentElement.getComponent_background_color().isEmpty() ? Color.parseColor(componentElement.getComponent_background_color()) : ContextCompat.getColor(mContext, R.color.color_000000_100),
                             !componentElement.getComponent_border_color().isEmpty()
                                     ? Color.parseColor(componentElement.getComponent_border_color())
                                     : ContextCompat.getColor(mContext, R.color.color_36415D), this);

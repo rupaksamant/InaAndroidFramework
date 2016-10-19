@@ -4,22 +4,24 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.support.v7.widget.AppCompatSpinner;
 import android.util.AttributeSet;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
 import com.dynamic.framework.R;
 
 import blueprint.dynamic.framework.model.cms_model.ComponentElement;
-import blueprint.dynamic.framework.utils.AppUtils;
+import blueprint.dynamic.framework.utils.Utils;
 
 /**
  * Created by Techjini on 10/10/2016.
  */
 public class BluePrintSpinner  extends AppCompatSpinner {
 
+    private Context mContext;
+
     public BluePrintSpinner(Context context) {
         super(context);
+        mContext = context;
     }
 
     public BluePrintSpinner(Context context, AttributeSet attrs, int defStyleAttr, int mode, Resources.Theme popupTheme) {
@@ -42,10 +44,10 @@ public class BluePrintSpinner  extends AppCompatSpinner {
         super(context, mode);
     }
 
-    public void setComponent(ComponentElement component, ViewGroup parentLayout) {
-        this.setId(AppUtils.getNextUniqueIndex());
+    public void setComponent(ComponentElement componentElement, ViewGroup parentLayout) {
+        this.setId(Utils.getIdFromString(mContext, componentElement.getItem_id()));
         ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(getContext(),
-                R.layout.blueprint_spinner_item, component.getComponent_data());
+                R.layout.blueprint_spinner_item, componentElement.getComponent_data());
         setAdapter(spinnerArrayAdapter);
         setSelection(0);
         parentLayout.addView(this);

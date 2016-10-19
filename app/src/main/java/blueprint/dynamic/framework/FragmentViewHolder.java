@@ -1,14 +1,12 @@
 package blueprint.dynamic.framework;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.dynamic.framework.R;
@@ -16,7 +14,7 @@ import com.dynamic.framework.R;
 import blueprint.dynamic.framework.model.cms_model.RootCms;
 import blueprint.dynamic.framework.ui_engine.ScreenGenerator;
 import blueprint.dynamic.framework.ui_engine.listeners.OnSwipeTouchListener;
-import blueprint.dynamic.framework.utils.AppUtils;
+import blueprint.dynamic.framework.utils.Utils;
 
 /**
  * Created by Techjini on 10/6/2016.
@@ -54,16 +52,20 @@ public class FragmentViewHolder extends Fragment {
     }
 
     private void initViewFromConfig(LinearLayout mParentLayout) {
-        String cmsString = AppUtils.readJsonFromAssets("cms.json", mActivity);
+        String cmsString = Utils.readJsonFromAssets("cms.json", mActivity);
         if(cmsString != null && cmsString.isEmpty() == false) {
-            RootCms config = AppUtils.stringToCMSJSON(cmsString);
+            RootCms config = Utils.stringToCMSJSON(cmsString);
             ScreenGenerator.getInstance(mActivity).createScreen(config.getScreens()[1], mParentLayout, listener);
         }
+
+        /*BluePrintButtonView buttonView = (BluePrintButtonView) mParentLayout.findViewById(
+                mActivity.getResources().getIdentifier("31",  "id", mActivity.getPackageName()));
+        System.out.println("text set to view---"+buttonView.getText() + ":---:"+buttonView.getId());*/
     }
 
     public void updateUi(String json) {
         if( json!= null && json.isEmpty() == false) {
-            RootCms config = AppUtils.stringToCMSJSON(json);
+            RootCms config = Utils.stringToCMSJSON(json);
             mParentLayout.removeAllViews();
             ScreenGenerator.getInstance(mActivity).createScreen(config.getScreens()[1], mParentLayout, listener);
         }
