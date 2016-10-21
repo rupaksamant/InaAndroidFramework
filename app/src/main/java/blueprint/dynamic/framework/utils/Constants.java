@@ -31,10 +31,10 @@ public class Constants {
     }
 
     public static class ContainerType {
-        public static final String HORIZONTAL_SCROLL_LAYOUT = "horizontal_scroll_view";
-        public static final String VERTICAL_SCROLL_LAYOUT = "vertical_scroll_view";
-        public static final String LINEAR_LAYOUT = "linear";
-        public static final String RELATIVE_LAYOUT = "relative";
+        public static final String HORIZONTAL_SCROLL_LAYOUT = "horizontal_scroll_layout";
+        public static final String VERTICAL_SCROLL_LAYOUT = "vertical_scroll_layout";
+        public static final String LINEAR_LAYOUT = "linear_layout";
+        public static final String RELATIVE_LAYOUT = "relative_layout";
     }
 
     public static class Orientation {
@@ -46,7 +46,7 @@ public class Constants {
         public static final int HEIGHT = 45;
     }
 
-    public static class ContainerTypes {
+    public static class ContainerName {
         public static final String TOOLBAR = "toolbar";
         public static final String TOOLBAR_LEFT = "left_toolbar";
         public static final String TOOLBAR_CENTER = "center_toolbar";

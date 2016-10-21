@@ -40,7 +40,7 @@ public class BluePrintButtonView extends Button {
     }
 
     public void setComponent(ComponentElement componentElement, ViewGroup parentLayout,
-                             String parent_orientation, OnSwipeTouchListener listener) {
+                             String parent_orientation) {
         System.out.println("BluePrintButtonView.setComponent-id---:"+Utils.getIdFromString(mContext, componentElement.getItem_id()));
         this.setId(Utils.getIdFromString(mContext, componentElement.getItem_id()));
 
@@ -63,16 +63,6 @@ public class BluePrintButtonView extends Button {
         }
 
         setComponentColors(componentElement);
-        if(listener != null) {
-            setOnTouchListener(listener);
-        }
-        /*setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                System.out.println("BluePrintButtonView.onClick--id--"+view.getId());
-            }
-        });*/
-
         System.out.println("BluePrintTextView.setComponent---"+componentElement.getComponent_label());
         parentLayout.addView(this);
     }

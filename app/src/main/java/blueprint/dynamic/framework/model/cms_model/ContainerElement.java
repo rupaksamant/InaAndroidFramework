@@ -86,4 +86,14 @@ public class ContainerElement {
 	public String getItem_id() {
 		return item_id;
 	}
+
+	private String container_type;
+
+	public void setContainer_type(String container_type) {
+		this.container_type = container_type;
+	}
+
+	public String getContainer_type() {
+		return container_type;
+	}
 }

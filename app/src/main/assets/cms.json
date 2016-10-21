@@ -146,6 +146,7 @@
           "container_name": "toolbar",
           "item_orientation": "horizontal",
           "container_background_color": "#F0F0F0",
+          "container_type": "linear_layout",
           "item_weight": ".15f",
           "weight_sum": "1",
           "container": [
@@ -153,6 +154,7 @@
               "item_id": "12",
               "container_name": "left_toolbar",
               "container_background_color": "#00FF00",
+              "container_type": "linear_layout",
               "item_weight": ".2f",
               "components": [
                 {
@@ -171,6 +173,7 @@
               "container_name": "center_toolbar",
               "container_background_color": "#FFFF00",
               "item_weight": ".6f",
+              "container_type": "linear_layout",
               "weight_sum": "1",
               "components": [
                 {
@@ -188,6 +191,7 @@
               "container_name": "right_toolbar",
               "container_background_color": "#F0F0F0",
               "item_weight": ".2f",
+              "container_type": "linear_layout",
               "components": [
                 {
                   "item_id": "17",
@@ -206,6 +210,7 @@
           "item_id": "18",
           "container_name": "content_container",
           "container_background_color": "#FFFFFF",
+          "container_type": "linear_layout",
           "item_orientation": "vertical",
           "item_weight": ".7f",
           "weight_sum": "1",
@@ -250,14 +255,405 @@
             },
             {
               "item_id": "23",
-              "container_name": "bottom_container",
+              "container_name": "middle_container",
               "container_background_color": "#00FF00",
-              "item_orientation": "vertical",
-              "item_weight": ".7f",
+              "container_type": "linear_layout",
+              "item_orientation": "horizontal",
+              "item_weight": ".5f",
               "weight_sum": "1",
+              "container": [
+                {
+                  "item_id": "31",
+                  "container_background_color": "#ff0000",
+                  "container_type": "vertical_scroll_layout",
+                  "item_weight": ".5f",
+                  "container": [
+                    {
+                      "item_id": "31",
+                      "container_background_color": "#ff0000",
+                      "container_type": "linear_layout",
+                      "item_weight": ".5f",
+                      "item_orientation": "vertical",
+                      "components": [
+                        {
+                          "item_id": "32",
+                          "component_type": "text_view",
+                          "component_key_name": "",
+                          "component_label": "Barcode 1",
+                          "component_background_color": "#FFFF00",
+                          "component_font_color": "#D9000000"
+                        },
+                        {
+                          "item_id": "33",
+                          "component_type": "text_view",
+                          "component_key_name": "",
+                          "component_label": "Barcode 2",
+                          "component_background_color": "#FFFF00",
+                          "component_font_color": "#D9000000"
+                        },
+                        {
+                          "item_id": "34",
+                          "component_type": "text_view",
+                          "component_key_name": "",
+                          "component_label": "Barcode 3",
+                          "component_background_color": "#FFFF00",
+                          "component_font_color": "#D9000000"
+                        },
+                        {
+                          "item_id": "35",
+                          "component_type": "text_view",
+                          "component_key_name": "",
+                          "component_label": "Barcode 4",
+                          "component_background_color": "#FFFF00",
+                          "component_font_color": "#D9000000"
+                        },
+                        {
+                          "item_id": "36",
+                          "component_type": "text_view",
+                          "component_key_name": "",
+                          "component_label": "Barcode 5",
+                          "component_background_color": "#FFFF00",
+                          "component_font_color": "#D9000000"
+                        },
+                        {
+                          "item_id": "37",
+                          "component_type": "text_view",
+                          "component_key_name": "",
+                          "component_label": "Barcode 6",
+                          "component_background_color": "#FFFF00",
+                          "component_font_color": "#D9000000"
+                        },
+                        {
+                          "item_id": "38",
+                          "component_type": "text_view",
+                          "component_key_name": "",
+                          "component_label": "Barcode 7",
+                          "component_background_color": "#FFFF00",
+                          "component_font_color": "#D9000000"
+                        },
+                        {
+                          "item_id": "39",
+                          "component_type": "text_view",
+                          "component_key_name": "",
+                          "component_label": "Barcode 8",
+                          "component_background_color": "#FFFF00",
+                          "component_font_color": "#D9000000"
+                        },
+                        {
+                          "item_id": "40",
+                          "component_type": "text_view",
+                          "component_key_name": "",
+                          "component_label": "Barcode 9",
+                          "component_background_color": "#FFFF00",
+                          "component_font_color": "#D9000000"
+                        },
+                        {
+                          "item_id": "41",
+                          "component_type": "text_view",
+                          "component_key_name": "",
+                          "component_label": "Barcode 10",
+                          "component_background_color": "#FFFF00",
+                          "component_font_color": "#D9000000"
+                        },
+                        {
+                          "item_id": "42",
+                          "component_type": "text_view",
+                          "component_key_name": "",
+                          "component_label": "Barcode 11",
+                          "component_background_color": "#FFFF00",
+                          "component_font_color": "#D9000000"
+                        },
+                        {
+                          "item_id": "43",
+                          "component_type": "text_view",
+                          "component_key_name": "",
+                          "component_label": "Barcode 12",
+                          "component_background_color": "#FFFF00",
+                          "component_font_color": "#D9000000"
+                        },
+                        {
+                          "item_id": "44",
+                          "component_type": "text_view",
+                          "component_key_name": "",
+                          "component_label": "Barcode 13",
+                          "component_background_color": "#FFFF00",
+                          "component_font_color": "#D9000000"
+                        },
+                        {
+                          "item_id": "45",
+                          "component_type": "text_view",
+                          "component_key_name": "",
+                          "component_label": "Barcode 14",
+                          "component_background_color": "#FFFF00",
+                          "component_font_color": "#D9000000"
+                        },
+                        {
+                          "item_id": "46",
+                          "component_type": "text_view",
+                          "component_key_name": "",
+                          "component_label": "Barcode 15",
+                          "component_background_color": "#FFFF00",
+                          "component_font_color": "#D9000000"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "item_id": "31",
+                  "container_background_color": "#ff0000",
+                  "container_type": "linear_layout",
+                  "item_orientation": "vertical",
+                  "item_weight": ".5f",
+                  "components": [
+                    {
+                      "item_id": "32",
+                      "component_type": "button",
+                      "component_key_name": "",
+                      "component_label": "Barcode 1",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".5f"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "item_id": "30",
+              "container_name": "bottom_container",
+              "container_type": "horizontal_scroll_layout",
+              "container_background_color": "#00FF00",
+              "item_weight": ".2f",
+              "container": [
+                {
+                  "item_id": "31",
+                  "container_background_color": "#ff0000",
+                  "container_type": "linear_layout",
+                  "item_orientation": "horizontal",
+                  "components": [
+                    {
+                      "item_id": "32",
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Barcode 1",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".33f"
+                    },
+                    {
+                      "item_id": "33",
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Barcode 2",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".33f"
+                    },
+                    {
+                      "item_id": "34",
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Barcode 3",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".33f"
+                    },
+                    {
+                      "item_id": "35",
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Barcode 4",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".33f"
+                    },
+                    {
+                      "item_id": "36",
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Barcode 5",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".33f"
+                    },
+                    {
+                      "item_id": "37",
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Barcode 6",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".33f"
+                    },
+                    {
+                      "item_id": "38",
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Barcode 7",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".33f"
+                    },
+                    {
+                      "item_id": "39",
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Barcode 8",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".33f"
+                    },
+                    {
+                      "item_id": "40",
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Barcode 9",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".33f"
+                    },
+                    {
+                      "item_id": "41",
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Barcode 10",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".33f"
+                    },
+                    {
+                      "item_id": "42",
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Barcode 11",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".33f"
+                    },
+                    {
+                      "item_id": "43",
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Barcode 12",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".33f"
+                    },
+                    {
+                      "item_id": "44",
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Barcode 13",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".33f"
+                    },
+                    {
+                      "item_id": "45",
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Barcode 14",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".33f"
+                    },
+                    {
+                      "item_id": "46",
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Barcode 15",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".33f"
+                    },
+                    {
+                      "item_id": "47",
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Barcode 16",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".33f"
+                    },
+                    {
+                      "item_id": "48",
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Barcode 17",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".33f"
+                    },
+                    {
+                      "item_id": "49",
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Barcode 18",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".33f"
+                    },
+                    {
+                      "item_id": "50",
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Barcode 19",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".33f"
+                    },
+                    {
+                      "item_id": "51",
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Barcode 20",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".33f"
+                    },
+                    {
+                      "item_id": "52",
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Barcode 21",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".33f"
+                    },
+                    {
+                      "item_id": "53",
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Barcode 22",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".33f"
+                    },
+                    {
+                      "item_id": "54",
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Barcode 23",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".33f"
+                    },
+                    {
+                      "item_id": "55",
+                      "component_type": "text_view",
+                      "component_key_name": "",
+                      "component_label": "Barcode 24",
+                      "component_background_color": "#FFFF00",
+                      "component_font_color": "#D9000000",
+                      "item_weight": ".33f"
+                    }
+                  ]
+                }
+              ],
               "components": [
                 {
-                  "item_id": "24",
+                  "item_id": "56",
                   "component_type": "composite",
                   "component_id": "horizontal_label_label",
                   "item_orientation": "horizontal",
@@ -265,7 +661,7 @@
                   "weight_sum": "1",
                   "components": [
                     {
-                      "item_id": "25",
+                      "item_id": "57",
                       "component_type": "text_view",
                       "component_key_name": "",
                       "component_label": "Description",
@@ -274,7 +670,7 @@
                       "item_weight": ".3f"
                     },
                     {
-                      "item_id": "26",
+                      "item_id": "58",
                       "component_type": "text_view",
                       "component_key_name": "description",
                       "component_label": "description_key",
@@ -285,7 +681,7 @@
                   ]
                 },
                 {
-                  "item_id": "27",
+                  "item_id": "59",
                   "component_type": "composite",
                   "component_id": "horizontal_label_label",
                   "item_orientation": "horizontal",
@@ -293,7 +689,7 @@
                   "weight_sum": "1",
                   "components": [
                     {
-                      "item_id": "28",
+                      "item_id": "60",
                       "component_type": "text_view",
                       "component_key_name": "",
                       "component_label": "Mark No.",
@@ -302,7 +698,7 @@
                       "item_weight": ".3f"
                     },
                     {
-                      "item_id": "29",
+                      "item_id": "61",
                       "component_type": "text_view",
                       "component_key_name": "mark_value",
                       "component_label": "mark_key",
@@ -317,14 +713,14 @@
           ]
         },
         {
-          "item_id": "30",
+          "item_id": "62",
           "container_name": "bottom_container",
           "container_background_color": "#0000FF",
           "item_orientation": "horizontal",
           "item_weight": ".15f",
           "components": [
             {
-              "item_id": "31",
+              "item_id": "63",
               "component_type": "button",
               "component_key_name": "",
               "component_label": "Remove",
@@ -333,7 +729,7 @@
               "item_weight": ".5f"
             },
             {
-              "item_id": "32",
+              "item_id": "64",
               "component_type": "button",
               "component_key_name": "",
               "component_label": "Add",

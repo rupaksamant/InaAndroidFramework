@@ -41,12 +41,9 @@ public class BluePrintTextView extends AppCompatTextView {
     }
 
     public void setComponent(ComponentElement componentElement, ViewGroup parentLayout,
-                             String parent_orientation, OnSwipeTouchListener listener) {
+                             String parent_orientation) {
         System.out.println("BluePrintTextView.setComponent---tv id---:"+Utils.getIdFromString(mContext, componentElement.getItem_id()));
         this.setId(Utils.getIdFromString(mContext, componentElement.getItem_id()));
-        if(listener != null) {
-            setOnTouchListener(listener);
-        }
         ComponentHelper.setLayoutParamsAndOrientation(mContext, this, componentElement, parent_orientation);
 
         if (parentLayout instanceof LinearLayout) {
@@ -69,7 +66,6 @@ public class BluePrintTextView extends AppCompatTextView {
 
         System.out.println("BluePrintTextView.setComponent---"+componentElement.getComponent_label());
         parentLayout.addView(this);
-        this.setOnTouchListener(listener);
     }
 
     public void setComponentColors(ComponentElement componentElement) {

@@ -3,49 +3,50 @@ package blueprint.dynamic.framework.model.customwidgets;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v4.content.ContextCompat;
-import android.util.AttributeSet;
-import android.view.MotionEvent;
-import android.view.View;
 import android.view.ViewGroup;
+import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 
 import com.dynamic.framework.R;
 
 import blueprint.dynamic.framework.model.cms_model.ComponentElement;
 import blueprint.dynamic.framework.model.cms_model.ContainerElement;
-import blueprint.dynamic.framework.ui_engine.listeners.OnSwipeTouchListener;
 import blueprint.dynamic.framework.utils.Constants;
 import blueprint.dynamic.framework.utils.Utils;
 
 /**
  * Created by Techjini on 10/10/2016.
  */
-public class BluePrintLinearContainer extends LinearLayout {
+public class InaContainer {
     private Context mContext;
-    private View view;
+    private ViewGroup mContainer;
 
-    public BluePrintLinearContainer(Context context) {
-        super(context);
+    public InaContainer(Context context) {
+//        super(context);
         mContext = context;
-        view = this;
+//        mContainer = this;
     }
 
-    public BluePrintLinearContainer(Context context, AttributeSet attrs) {
+    /*public InaContainer(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
-        view = this;
+        mContainer = this;
     }
 
-    public BluePrintLinearContainer(Context context, AttributeSet attrs, int defStyleAttr) {
+    public InaContainer(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mContext = context;
-        view = this;
-    }
+        mContainer = this;
+    }*/
 
-    public void setComponent(ContainerElement containerElement, ViewGroup parentLayout, String parent_item_orientation, OnSwipeTouchListener listener) {
+    public void setComponent(ContainerElement containerElement, ViewGroup parentLayout, String parent_item_orientation) {
+
         System.out.println("BluePrintLinearContainer.setComponent contianer id---:"+ Utils.getIdFromString(mContext, containerElement.getItem_id()));
-        this.setId(Utils.getIdFromString(mContext, containerElement.getItem_id()));
-        setClickable(true);
+
+        createConcreteContainer(containerElement, parent_item_orientation);
+
+        mContainer.setId(Utils.getIdFromString(mContext, containerElement.getItem_id()));
         setOrientationAndLayoutParams(containerElement.getItem_orientation(),
                 containerElement.getItem_weight(),
                 parent_item_orientation,
@@ -54,54 +55,70 @@ public class BluePrintLinearContainer extends LinearLayout {
         setBackgroundColor(containerElement.getContainer_background_color(), R.color.container_defualt_color);
 
         if (containerElement.getComponents() != null) {
-            addComponents(containerElement.getComponents(), containerElement.getItem_orientation(), listener);
+            addComponents(containerElement.getComponents(), containerElement.getItem_orientation());
         }
-        this.setOnTouchListener(listener);
-        parentLayout.addView(this);
-        this.invalidate();
+//        mContainer.setOnTouchListener(listener);
+        parentLayout.addView(mContainer);
+        mContainer.invalidate();
     }
 
-    private void addComponents(ComponentElement[] components, String parent_orientation, OnSwipeTouchListener listener) {
+    private void createConcreteContainer(ContainerElement containerElement, String parent_item_orientation) {
+        String type = containerElement.getContainer_type();
+        if(type != null && type.isEmpty() == false) {
+            if(type.equalsIgnoreCase(Constants.ContainerType.HORIZONTAL_SCROLL_LAYOUT)){
+                mContainer = new HorizontalScrollView(mContext);
+//                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams()
+            } else if(type.equalsIgnoreCase(Constants.ContainerType.VERTICAL_SCROLL_LAYOUT)){
+                mContainer = new ScrollView(mContext);
+            } else {
+                mContainer = new LinearLayout(mContext);
+            }
+        } else {
+            mContainer = new LinearLayout(mContext);
+        }
+    }
+
+    private void addComponents(ComponentElement[] components, String parent_orientation) {
         /*if(components != null && components.length > 0) {
             
         }*/
         for (ComponentElement componentElement : components) {
-            addComponent(componentElement, parent_orientation, listener);
+            addComponent(componentElement, parent_orientation);
         }
     }
 
-    private void addComponent(ComponentElement componentElement, String parent_orientation, OnSwipeTouchListener listener) {
+    private void addComponent(ComponentElement componentElement, String parent_orientation) {
 
         if (Constants.ComponentId.EDIT_TEXT.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintEditText editText = new BluePrintEditText(mContext);
-            editText.setComponent(componentElement, this);
+            editText.setComponent(componentElement, mContainer);
         } else if (Constants.ComponentId.BUTTON_VIEW.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintButtonView buttonView = new BluePrintButtonView(mContext);
-            buttonView.setComponent(componentElement, this, parent_orientation, listener);
+            buttonView.setComponent(componentElement, mContainer, parent_orientation);
         } else if (Constants.ComponentId.HORIZONTAL_ICON_LABEL.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintEditText editText = new BluePrintEditText(mContext);
-            editText.setComponent(componentElement, this);
+            editText.setComponent(componentElement, mContainer);
         } else if (Constants.ComponentId.HORIZONTAL_ICON_LABEL.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintEditText editText = new BluePrintEditText(mContext);
-            editText.setComponent(componentElement, this);
+            editText.setComponent(componentElement, mContainer);
         } else if (Constants.ComponentId.HORIZONTAL_LABEL_ICON.equalsIgnoreCase(componentElement.getComponent_type())) {
 
         } else if (Constants.ComponentId.HORIZONTAL_LABEL_LABEL.equalsIgnoreCase(componentElement.getComponent_type())) {
 
         } else if (Constants.ComponentId.SPINNER.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintSpinner spinner = new BluePrintSpinner(mContext);
-            spinner.setComponent(componentElement, this);
+            spinner.setComponent(componentElement, mContainer);
         } else if (Constants.ComponentId.TEXT_VIEW.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintTextView textView = new BluePrintTextView(mContext);
-            textView.setComponent(componentElement, this, parent_orientation, listener);
+            textView.setComponent(componentElement, mContainer, parent_orientation);
         } else if (Constants.ComponentId.VERTICAL_LABEL_EDIT_TEXT.equalsIgnoreCase(componentElement.getComponent_type())) {
 
         } else if (Constants.ComponentId.VERTICAL_LABEL_LABEL.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintTextView leftTextView = new BluePrintTextView(mContext);
-            leftTextView.setComponent(componentElement, this, parent_orientation, listener);
+            leftTextView.setComponent(componentElement, mContainer, parent_orientation);
 
             BluePrintTextView rightTextView = new BluePrintTextView(mContext);
-            rightTextView.setComponent(componentElement, this, parent_orientation, listener);
+            rightTextView.setComponent(componentElement, mContainer, parent_orientation);
 
 
         } else if (Constants.ComponentId.VERTICAL_LABEL_SPINNER.equalsIgnoreCase(componentElement.getComponent_type())) {
@@ -111,10 +128,10 @@ public class BluePrintLinearContainer extends LinearLayout {
 
     private void setBackgroundColor(String background_color, int defualt_color) {
         if (background_color != null) {
-            view.setBackgroundColor(!background_color.isEmpty()
+            mContainer.setBackgroundColor(!background_color.isEmpty()
                     ? Color.parseColor(background_color) : ContextCompat.getColor(mContext, defualt_color));
         } else {
-            view.setBackgroundColor(ContextCompat.getColor(mContext, defualt_color));
+            mContainer.setBackgroundColor(ContextCompat.getColor(mContext, defualt_color));
         }
     }
 
@@ -126,40 +143,50 @@ public class BluePrintLinearContainer extends LinearLayout {
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(0,
                         ViewGroup.LayoutParams.MATCH_PARENT, Float.parseFloat(weight));
                 params.setMargins(margin, margin, margin, margin);
-                this.setLayoutParams(params);
+                mContainer.setLayoutParams(params);
             } else {
                 LinearLayout.LayoutParams params1 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                         ViewGroup.LayoutParams.MATCH_PARENT);
                 params1.setMargins(margin, margin, margin, margin);
-                this.setLayoutParams(params1);
+                mContainer.setLayoutParams(params1);
             }
         } else if (Constants.Orientation.VERTICAL.equalsIgnoreCase(parent_item_orientation)) {
             if (weight != null && weight.isEmpty() == false) {
                 LinearLayout.LayoutParams params2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                         0, Float.parseFloat(weight));
                 params2.setMargins(margin, margin, margin, margin);
-                this.setLayoutParams(params2);
+                mContainer.setLayoutParams(params2);
             } else {
                 LinearLayout.LayoutParams params3 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                         ViewGroup.LayoutParams.MATCH_PARENT);
                 params3.setMargins(margin, margin, margin, margin);
-                this.setLayoutParams(params3);
+                mContainer.setLayoutParams(params3);
+            }
+        } else {
+            LinearLayout.LayoutParams params3 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.MATCH_PARENT);
+            params3.setMargins(margin, margin, margin, margin);
+            mContainer.setLayoutParams(params3);
+        }
+        if(mContainer instanceof LinearLayout) {
+            if (Constants.Orientation.HORIZONTAL.equalsIgnoreCase(orientation)) {
+                ((LinearLayout)mContainer).setOrientation(LinearLayout.HORIZONTAL);
+            } else {
+                ((LinearLayout)mContainer).setOrientation(LinearLayout.VERTICAL);
             }
         }
-
-        if (Constants.Orientation.HORIZONTAL.equalsIgnoreCase(orientation)) {
-            this.setOrientation(LinearLayout.HORIZONTAL);
-        } else {
-            this.setOrientation(LinearLayout.VERTICAL);
-        }
         if (weight_sum != null && weight_sum.isEmpty() == false) {
-//            this.setWeightSum(Float.parseFloat(weight_sum));
+//            mContainer.setWeightSum(Float.parseFloat(weight_sum));
         }
     }
 
-    @Override
+    public ViewGroup getContainer() {
+        return mContainer;
+    }
+
+    /*@Override
     public boolean onTouchEvent(MotionEvent event) {
         System.out.println("BluePrintLinearContainer.onTouchEvent");
         return super.onTouchEvent(event);
-    }
+    }*/
 }

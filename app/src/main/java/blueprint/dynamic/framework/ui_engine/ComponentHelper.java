@@ -16,6 +16,7 @@ public class ComponentHelper {
     public static void setLayoutParamsAndOrientation(Context context, View view, ComponentElement componentElement, String parent_orientation) {
         String weight = componentElement.getItem_weight();
         int margin = (int) context.getResources().getDimension(R.dimen.dimen_5_dp);
+        int padding = (int) context.getResources().getDimension(R.dimen.dimen_5_dp);
 
         if (Constants.Orientation.HORIZONTAL.equalsIgnoreCase(parent_orientation)) {
             if (weight != null && weight.isEmpty() == false) {
@@ -23,11 +24,13 @@ public class ComponentHelper {
                         LinearLayout.LayoutParams.MATCH_PARENT, Float.parseFloat(weight));
                 params.setMargins(margin, margin, margin, margin);
                 view.setLayoutParams(params);
+                view.setPadding(padding, padding, padding, padding);
             } else {
                 LinearLayout.LayoutParams params1 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                         LinearLayout.LayoutParams.MATCH_PARENT);
                 params1.setMargins(margin, margin, margin, margin);
                 view.setLayoutParams(params1);
+                view.setPadding(padding, padding, padding, padding);
             }
         } else if (Constants.Orientation.VERTICAL.equalsIgnoreCase(parent_orientation)) {
             if (weight != null && weight.isEmpty() == false) {
@@ -40,7 +43,15 @@ public class ComponentHelper {
                         LinearLayout.LayoutParams.MATCH_PARENT);
                 params3.setMargins(margin, margin, margin, margin);
                 view.setLayoutParams(params3);
+                view.setPadding(padding, padding, padding, padding);
+                view.setPadding(padding, padding, padding, padding);
             }
+        } else {
+            LinearLayout.LayoutParams params4 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT);
+            params4.setMargins(margin, margin, margin, margin);
+            view.setLayoutParams(params4);
+            view.setPadding(padding, padding, padding, padding);
         }
     }
 
