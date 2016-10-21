@@ -7,33 +7,33 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApiElement {
-    private java.lang.String storage_type;
+    private String storage_type;
 
-    public void setStorage_type(java.lang.String storage_type) {
+    public void setStorage_type(String storage_type) {
         this.storage_type = storage_type;
     }
 
-    public java.lang.String getStorage_type() {
+    public String getStorage_type() {
         return storage_type;
     }
 
-    private java.lang.String api_url;
+    private String api_url;
 
-    public void setApi_url(java.lang.String api_url) {
+    public void setApi_url(String api_url) {
         this.api_url = api_url;
     }
 
-    public java.lang.String getApi_url() {
+    public String getApi_url() {
         return api_url;
     }
 
-    private java.lang.String storage_field_name;
+    private String storage_field_name;
 
-    public void setStorage_field_name(java.lang.String storage_field_name) {
+    public void setStorage_field_name(String storage_field_name) {
         this.storage_field_name = storage_field_name;
     }
 
-    public java.lang.String getStorage_field_name() {
+    public String getStorage_field_name() {
         return storage_field_name;
     }
 
@@ -47,13 +47,13 @@ public class ApiElement {
         return api_input_parameters;
     }
 
-    private java.lang.String api_input_type;
+    private String api_input_type;
 
-    public void setApi_input_type(java.lang.String api_input_type) {
+    public void setApi_input_type(String api_input_type) {
         this.api_input_type = api_input_type;
     }
 
-    public java.lang.String getApi_input_type() {
+    public String getApi_input_type() {
         return api_input_type;
     }
 

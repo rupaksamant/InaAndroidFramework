@@ -42,8 +42,18 @@ public class Constants {
         public static final String HORIZONTAL = "horizontal";
     }
 
-    public static class BluePrintTextViewConstants {
-        public static final int HEIGHT = 45;
+    public static class DefaultValue {
+        public static final int BUTTUON_HEIGHT = 45;
+        public static final int BUTTUON_WIDTH = 80;
+
+        public static final int LABEL_HEIGHT = 45;
+        public static final int LABEL_WIDTH = 80;
+
+        public static final int EDITTEXT_HEIGHT = 45;
+        public static final int EDITTEXT_WIDTH = 120;
+
+        public static final int SPINNER_HEIGHT = 45;
+        public static final int SPINNER_WIDTH = 80;
     }
 
     public static class ContainerName {

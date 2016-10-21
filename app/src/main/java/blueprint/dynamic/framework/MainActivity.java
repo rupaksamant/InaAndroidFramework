@@ -174,8 +174,8 @@ public class MainActivity extends AppCompatActivity
 
         @Override
         protected String doInBackground(Void... params) {
-            return fetchMockeyJson();
-//            return fetchConfigWithPostJson();
+//            return fetchMockeyJson();
+            return fetchConfigWithPostJson();
         }
 
         private String fetchMockeyJson() {
@@ -213,7 +213,10 @@ public class MainActivity extends AppCompatActivity
                     "settingType": ""
                 }*/
                 post_dict.put("configSettings", "");
-                post_dict.put("appId", "1");
+                JSONObject queryData = new JSONObject();
+                queryData.put("appId", "1");
+                post_dict.put("queryData", queryData);
+
                 post_dict.put("settingType", "");
 
                 String JsonDATA = String.valueOf(post_dict);

@@ -1,780 +1,390 @@
 {
-  "apis": [
-    {
-      "api_url": "http://192.168.26.20:9010/api/User",
-      "api_input_type": "multipart",
-      "api_input_parameters": [
-        {
-          "key_name": "data",
-          "value_from": "data"
-        },
-        {
-          "key_name": "From",
-          "value_from": "From"
-        },
-        {
-          "key_name": "To",
-          "value_from": "To"
-        }
-      ],
-      "storage_type": "preference",
-      "storage_field_name": "person_id"
-    }
-  ],
-  "screens": [
-    {
-      "screen_id": "screen_0",
-      "screen_display_name": "Navigation Drawer Screen",
-      "screen_type": "navigation_drawer",
-      "item_orientation": "vertical",
-      "table_name": "table_1",
-      "container": [
-        {
-          "container_name": "profile_section",
-          "container_background_color": "#f3f5f6",
-          "item_orientation": "horizontal",
-          "item_weight": "15",
-          "item_id": "1",
-          "container": [
-            {
-              "container_name": "profile_image_subsection",
-              "container_background_color": "#f3f5f6",
-              "item_id": "2",
-              "components": [
-                {
-                  "component_type": "image_view",
-                  "component_key_name": "profile_pic_component",
-                  "component_label": "",
-                  "component_background_color": "",
-                  "component_font_color": "",
-                  "item_weight": "15",
-                  "item_id": "3",
-                  "apis": [
-                    {
-                      "api_url": "http://192.168.26.20:9010/api/User",
-                      "api_input_type": "multipart",
-                      "api_input_parameters": [
-                        {
-                          "key_name": "data",
-                          "value_from": "data"
-                        },
-                        {
-                          "key_name": "From",
-                          "value_from": "From"
-                        },
-                        {
-                          "key_name": "To",
-                          "value_from": "To"
-                        }
-                      ],
-                      "storage_type": "preference",
-                      "storage_field_name": "person_id"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "item_id": "4",
-              "container_name": "profile_name",
-              "container_background_color": "#f3f5f6",
-              "components": [
-                {
-                  "component_type": "text_view",
-                  "component_key_name": "profile_name",
-                  "component_label": "",
-                  "component_background_color": "",
-                  "component_font_color": "",
-                  "item_id": "5"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "container_name": "left_menu_section",
-          "container_background_color": "#f3f5f6",
-          "item_id": "6",
-          "container": [
-            {
-              "item_id": "7",
-              "container_name": "settings_subsection",
-              "container_background_color": "#f3f5f6",
-              "components": [
-                {
-                  "item_id": "8",
-                  "component_type": "text_view",
-                  "component_key_name": "expense_component",
-                  "component_label": "About",
-                  "component_background_color": "",
-                  "component_font_color": "",
-                  "component_icon": "component_icon"
-                },
-                {
-                  "item_id": "9",
-                  "component_type": "text_view",
-                  "component_key_name": "setting_component",
-                  "component_label": "Settings",
-                  "component_background_color": "",
-                  "component_font_color": "",
-                  "component_icon": "component_icon"
-                },
-                {
-                  "item_id": "10",
-                  "component_type": "text_view",
-                  "component_key_name": "logout_component",
-                  "component_label": "Log Out",
-                  "component_background_color": "",
-                  "component_font_color": "",
-                  "component_icon": "http://cdn.1001freedownloads.com/icon/thumb/394849/Mario-icon.png"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "screen_id": "screen_1",
-      "screen_display_name": "Expense Dashboard Screen",
-      "table_name": "table_1",
-      "screen_type": "general_screen",
-      "item_orientation": "vertical",
-      "container": [
-        {
-          "item_id": "11",
-          "container_name": "toolbar",
-          "item_orientation": "horizontal",
-          "container_background_color": "#F0F0F0",
-          "container_type": "linear_layout",
-          "item_weight": ".15f",
-          "weight_sum": "1",
-          "container": [
-            {
-              "item_id": "12",
-              "container_name": "left_toolbar",
-              "container_background_color": "#00FF00",
-              "container_type": "linear_layout",
-              "item_weight": ".2f",
-              "components": [
-                {
-                  "item_id": "13",
-                  "component_type": "image_view",
-                  "component_key_name": "",
-                  "component_label": "",
-                  "component_background_color": "#FF0000",
-                  "component_font_color": "#CC000000",
-                  "component_icon": "back_arrow"
-                }
-              ]
-            },
-            {
-              "item_id": "14",
-              "container_name": "center_toolbar",
-              "container_background_color": "#FFFF00",
-              "item_weight": ".6f",
-              "container_type": "linear_layout",
-              "weight_sum": "1",
-              "components": [
-                {
-                  "item_id": "15",
-                  "component_type": "text_view",
-                  "component_key_name": "",
-                  "component_label": "Business Expenses Report",
-                  "component_background_color": "#00FF00",
-                  "component_font_color": "#CC000000"
-                }
-              ]
-            },
-            {
-              "item_id": "16",
-              "container_name": "right_toolbar",
-              "container_background_color": "#F0F0F0",
-              "item_weight": ".2f",
-              "container_type": "linear_layout",
-              "components": [
-                {
-                  "item_id": "17",
-                  "component_type": "image_view",
-                  "component_key_name": "",
-                  "component_label": "",
-                  "component_background_color": "#0000FF",
-                  "component_font_color": "#CC000000",
-                  "component_icon": "menu_icon"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "item_id": "18",
-          "container_name": "content_container",
-          "container_background_color": "#FFFFFF",
-          "container_type": "linear_layout",
-          "item_orientation": "vertical",
-          "item_weight": ".7f",
-          "weight_sum": "1",
-          "container": [
-            {
-              "item_id": "19",
-              "container_name": "top_container",
-              "container_background_color": "#ff0000",
-              "item_orientation": "vertical",
-              "item_weight": ".3f",
-              "weight_sum": "1",
-              "components": [
-                {
-                  "item_id": "20",
-                  "component_type": "text_view",
-                  "component_key_name": "",
-                  "component_label": "Barcode",
-                  "component_background_color": "#FFFF00",
-                  "component_font_color": "#D9000000",
-                  "item_weight": ".33f"
-                },
-                {
-                  "item_id": "21",
-                  "component_type": "eidt_text",
-                  "component_key_name": "barcode_scan",
-                  "component_label": "",
-                  "component_hint": "Scan a item",
-                  "component_background_color": "#FFFF00",
-                  "component_font_color": "#D9000000",
-                  "item_weight": ".33f"
-                },
-                {
-                  "item_id": "22",
-                  "component_type": "text_view",
-                  "component_key_name": "",
-                  "component_label": "Scan Count:",
-                  "component_background_color": "#FFFF00",
-                  "component_font_color": "#D9000000",
-                  "item_weight": ".33f"
-                }
-              ]
-            },
-            {
-              "item_id": "23",
-              "container_name": "middle_container",
-              "container_background_color": "#00FF00",
-              "container_type": "linear_layout",
-              "item_orientation": "horizontal",
-              "item_weight": ".5f",
-              "weight_sum": "1",
-              "container": [
-                {
-                  "item_id": "31",
-                  "container_background_color": "#ff0000",
-                  "container_type": "vertical_scroll_layout",
-                  "item_weight": ".5f",
-                  "container": [
-                    {
-                      "item_id": "31",
-                      "container_background_color": "#ff0000",
-                      "container_type": "linear_layout",
-                      "item_weight": ".5f",
-                      "item_orientation": "vertical",
-                      "components": [
-                        {
-                          "item_id": "32",
-                          "component_type": "text_view",
-                          "component_key_name": "",
-                          "component_label": "Barcode 1",
-                          "component_background_color": "#FFFF00",
-                          "component_font_color": "#D9000000"
-                        },
-                        {
-                          "item_id": "33",
-                          "component_type": "text_view",
-                          "component_key_name": "",
-                          "component_label": "Barcode 2",
-                          "component_background_color": "#FFFF00",
-                          "component_font_color": "#D9000000"
-                        },
-                        {
-                          "item_id": "34",
-                          "component_type": "text_view",
-                          "component_key_name": "",
-                          "component_label": "Barcode 3",
-                          "component_background_color": "#FFFF00",
-                          "component_font_color": "#D9000000"
-                        },
-                        {
-                          "item_id": "35",
-                          "component_type": "text_view",
-                          "component_key_name": "",
-                          "component_label": "Barcode 4",
-                          "component_background_color": "#FFFF00",
-                          "component_font_color": "#D9000000"
-                        },
-                        {
-                          "item_id": "36",
-                          "component_type": "text_view",
-                          "component_key_name": "",
-                          "component_label": "Barcode 5",
-                          "component_background_color": "#FFFF00",
-                          "component_font_color": "#D9000000"
-                        },
-                        {
-                          "item_id": "37",
-                          "component_type": "text_view",
-                          "component_key_name": "",
-                          "component_label": "Barcode 6",
-                          "component_background_color": "#FFFF00",
-                          "component_font_color": "#D9000000"
-                        },
-                        {
-                          "item_id": "38",
-                          "component_type": "text_view",
-                          "component_key_name": "",
-                          "component_label": "Barcode 7",
-                          "component_background_color": "#FFFF00",
-                          "component_font_color": "#D9000000"
-                        },
-                        {
-                          "item_id": "39",
-                          "component_type": "text_view",
-                          "component_key_name": "",
-                          "component_label": "Barcode 8",
-                          "component_background_color": "#FFFF00",
-                          "component_font_color": "#D9000000"
-                        },
-                        {
-                          "item_id": "40",
-                          "component_type": "text_view",
-                          "component_key_name": "",
-                          "component_label": "Barcode 9",
-                          "component_background_color": "#FFFF00",
-                          "component_font_color": "#D9000000"
-                        },
-                        {
-                          "item_id": "41",
-                          "component_type": "text_view",
-                          "component_key_name": "",
-                          "component_label": "Barcode 10",
-                          "component_background_color": "#FFFF00",
-                          "component_font_color": "#D9000000"
-                        },
-                        {
-                          "item_id": "42",
-                          "component_type": "text_view",
-                          "component_key_name": "",
-                          "component_label": "Barcode 11",
-                          "component_background_color": "#FFFF00",
-                          "component_font_color": "#D9000000"
-                        },
-                        {
-                          "item_id": "43",
-                          "component_type": "text_view",
-                          "component_key_name": "",
-                          "component_label": "Barcode 12",
-                          "component_background_color": "#FFFF00",
-                          "component_font_color": "#D9000000"
-                        },
-                        {
-                          "item_id": "44",
-                          "component_type": "text_view",
-                          "component_key_name": "",
-                          "component_label": "Barcode 13",
-                          "component_background_color": "#FFFF00",
-                          "component_font_color": "#D9000000"
-                        },
-                        {
-                          "item_id": "45",
-                          "component_type": "text_view",
-                          "component_key_name": "",
-                          "component_label": "Barcode 14",
-                          "component_background_color": "#FFFF00",
-                          "component_font_color": "#D9000000"
-                        },
-                        {
-                          "item_id": "46",
-                          "component_type": "text_view",
-                          "component_key_name": "",
-                          "component_label": "Barcode 15",
-                          "component_background_color": "#FFFF00",
-                          "component_font_color": "#D9000000"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "item_id": "31",
-                  "container_background_color": "#ff0000",
-                  "container_type": "linear_layout",
-                  "item_orientation": "vertical",
-                  "item_weight": ".5f",
-                  "components": [
-                    {
-                      "item_id": "32",
-                      "component_type": "button",
-                      "component_key_name": "",
-                      "component_label": "Barcode 1",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".5f"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "item_id": "30",
-              "container_name": "bottom_container",
-              "container_type": "horizontal_scroll_layout",
-              "container_background_color": "#00FF00",
-              "item_weight": ".2f",
-              "container": [
-                {
-                  "item_id": "31",
-                  "container_background_color": "#ff0000",
-                  "container_type": "linear_layout",
-                  "item_orientation": "horizontal",
-                  "components": [
-                    {
-                      "item_id": "32",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Barcode 1",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".33f"
-                    },
-                    {
-                      "item_id": "33",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Barcode 2",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".33f"
-                    },
-                    {
-                      "item_id": "34",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Barcode 3",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".33f"
-                    },
-                    {
-                      "item_id": "35",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Barcode 4",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".33f"
-                    },
-                    {
-                      "item_id": "36",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Barcode 5",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".33f"
-                    },
-                    {
-                      "item_id": "37",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Barcode 6",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".33f"
-                    },
-                    {
-                      "item_id": "38",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Barcode 7",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".33f"
-                    },
-                    {
-                      "item_id": "39",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Barcode 8",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".33f"
-                    },
-                    {
-                      "item_id": "40",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Barcode 9",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".33f"
-                    },
-                    {
-                      "item_id": "41",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Barcode 10",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".33f"
-                    },
-                    {
-                      "item_id": "42",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Barcode 11",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".33f"
-                    },
-                    {
-                      "item_id": "43",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Barcode 12",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".33f"
-                    },
-                    {
-                      "item_id": "44",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Barcode 13",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".33f"
-                    },
-                    {
-                      "item_id": "45",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Barcode 14",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".33f"
-                    },
-                    {
-                      "item_id": "46",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Barcode 15",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".33f"
-                    },
-                    {
-                      "item_id": "47",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Barcode 16",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".33f"
-                    },
-                    {
-                      "item_id": "48",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Barcode 17",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".33f"
-                    },
-                    {
-                      "item_id": "49",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Barcode 18",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".33f"
-                    },
-                    {
-                      "item_id": "50",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Barcode 19",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".33f"
-                    },
-                    {
-                      "item_id": "51",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Barcode 20",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".33f"
-                    },
-                    {
-                      "item_id": "52",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Barcode 21",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".33f"
-                    },
-                    {
-                      "item_id": "53",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Barcode 22",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".33f"
-                    },
-                    {
-                      "item_id": "54",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Barcode 23",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".33f"
-                    },
-                    {
-                      "item_id": "55",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Barcode 24",
-                      "component_background_color": "#FFFF00",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".33f"
-                    }
-                  ]
-                }
-              ],
-              "components": [
-                {
-                  "item_id": "56",
-                  "component_type": "composite",
-                  "component_id": "horizontal_label_label",
-                  "item_orientation": "horizontal",
-                  "component_background_color": "",
-                  "weight_sum": "1",
-                  "components": [
-                    {
-                      "item_id": "57",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Description",
-                      "component_background_color": "",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".3f"
-                    },
-                    {
-                      "item_id": "58",
-                      "component_type": "text_view",
-                      "component_key_name": "description",
-                      "component_label": "description_key",
-                      "component_background_color": "",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".7f"
-                    }
-                  ]
-                },
-                {
-                  "item_id": "59",
-                  "component_type": "composite",
-                  "component_id": "horizontal_label_label",
-                  "item_orientation": "horizontal",
-                  "component_background_color": "",
-                  "weight_sum": "1",
-                  "components": [
-                    {
-                      "item_id": "60",
-                      "component_type": "text_view",
-                      "component_key_name": "",
-                      "component_label": "Mark No.",
-                      "component_background_color": "",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".3f"
-                    },
-                    {
-                      "item_id": "61",
-                      "component_type": "text_view",
-                      "component_key_name": "mark_value",
-                      "component_label": "mark_key",
-                      "component_background_color": "",
-                      "component_font_color": "#D9000000",
-                      "item_weight": ".7f"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "item_id": "62",
-          "container_name": "bottom_container",
-          "container_background_color": "#0000FF",
-          "item_orientation": "horizontal",
-          "item_weight": ".15f",
-          "components": [
-            {
-              "item_id": "63",
-              "component_type": "button",
-              "component_key_name": "",
-              "component_label": "Remove",
-              "component_background_color": "#FFFF00",
-              "component_font_color": "#FFFFFF",
-              "item_weight": ".5f"
-            },
-            {
-              "item_id": "64",
-              "component_type": "button",
-              "component_key_name": "",
-              "component_label": "Add",
-              "component_background_color": "#FFFF00",
-              "component_font_color": "#FFFFFF",
-              "item_weight": ".5f",
-              "apis": [
-                {
-                  "api_url": "http://192.168.26.20:9010/api/User",
-                  "api_input_type": "multipart",
-                  "api_input_parameters": [
-                    {
-                      "key_name": "data",
-                      "value_from": "data"
-                    },
-                    {
-                      "key_name": "From",
-                      "value_from": "From"
-                    },
-                    {
-                      "key_name": "To",
-                      "value_from": "To"
-                    }
-                  ],
-                  "storage_type": "preference",
-                  "storage_field_name": "person_id"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "database_tables": [
-    {
-      "table_name": "expense_list_table",
-      "fields": []
-    },
-    {
-      "table_name": "expense_detail_table",
-      "fields": []
-    }
-  ],
-  "status_messages": [],
-  "data_status_code": [],
-  "keys": []
+  "grid": null,
+  "logger": null,
+  "application": {
+    "apis": [
+      {
+        "api_url": "http://192.168.26.20:9010/api/User",
+        "api_input_type": "multipart",
+        "api_input_parameters": [
+          {
+            "key_name": "data",
+            "value_from": "data"
+          },
+          {
+            "key_name": "From",
+            "value_from": "From"
+          },
+          {
+            "key_name": "To",
+            "value_from": "To"
+          }
+        ],
+        "storage_type": "preference",
+        "storage_field_name": "person_id"
+      }
+    ],
+    "screens": [
+      {
+        "screen_id": "screen_0",
+        "screen_display_name": "Navigation Drawer Screen",
+        "screen_type": "navigation_drawer",
+        "item_orientation": "vertical",
+        "table_name": "table_1",
+        "container": [
+          {
+            "container_name": "profile_section",
+            "container_background_color": "#f3f5f6",
+            "item_orientation": "horizontal",
+            "item_weight": "15",
+            "item_id": "1",
+            "container": [
+              {
+                "container_name": "profile_image_subsection",
+                "container_background_color": "#f3f5f6",
+                "item_id": "2",
+                "components": [
+                  {
+                    "component_type": "image_view",
+                    "component_key_name": "profile_pic_component",
+                    "component_label": "",
+                    "component_background_color": "",
+                    "component_font_color": "",
+                    "item_weight": "15",
+                    "item_id": "3",
+                    "apis": [
+                      {
+                        "api_url": "http://192.168.26.20:9010/api/User",
+                        "api_input_type": "multipart",
+                        "api_input_parameters": [
+                          {
+                            "key_name": "data",
+                            "value_from": "data"
+                          },
+                          {
+                            "key_name": "From",
+                            "value_from": "From"
+                          },
+                          {
+                            "key_name": "To",
+                            "value_from": "To"
+                          }
+                        ],
+                        "storage_type": "preference",
+                        "storage_field_name": "person_id"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "item_id": "4",
+                "container_name": "profile_name",
+                "container_background_color": "#f3f5f6",
+                "components": [
+                  {
+                    "component_type": "text_view",
+                    "component_key_name": "profile_name",
+                    "component_label": "",
+                    "component_background_color": "",
+                    "component_font_color": "",
+                    "item_id": "5"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "container_name": "left_menu_section",
+            "container_background_color": "#f3f5f6",
+            "item_id": "6",
+            "container": [
+              {
+                "item_id": "7",
+                "container_name": "settings_subsection",
+                "container_background_color": "#f3f5f6",
+                "components": [
+                  {
+                    "item_id": "8",
+                    "component_type": "text_view",
+                    "component_key_name": "expense_component",
+                    "component_label": "About",
+                    "component_background_color": "",
+                    "component_font_color": "",
+                    "component_icon": "component_icon"
+                  },
+                  {
+                    "item_id": "9",
+                    "component_type": "text_view",
+                    "component_key_name": "setting_component",
+                    "component_label": "Settings",
+                    "component_background_color": "",
+                    "component_font_color": "",
+                    "component_icon": "component_icon"
+                  },
+                  {
+                    "item_id": "10",
+                    "component_type": "text_view",
+                    "component_key_name": "logout_component",
+                    "component_label": "Log Out",
+                    "component_background_color": "",
+                    "component_font_color": "",
+                    "component_icon": "http://cdn.1001freedownloads.com/icon/thumb/394849/Mario-icon.png"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "screen_id": "screen_1",
+        "screen_display_name": "Expense Dashboard Screen",
+        "table_name": "table_1",
+        "screen_type": "general_screen",
+        "item_orientation": "vertical",
+        "container": [
+          {
+            "item_id": "11",
+            "container_name": "toolbar",
+            "item_orientation": "horizontal",
+            "container_background_color": "#F0F0F0",
+            "item_weight": ".15f",
+            "weight_sum": "1",
+            "container": [
+              {
+                "item_id": "12",
+                "container_name": "left_toolbar",
+                "container_background_color": "#00FF00",
+                "item_weight": ".2f",
+                "components": [
+                  {
+                    "item_id": "13",
+                    "component_type": "image_view",
+                    "component_key_name": "",
+                    "component_label": "",
+                    "component_background_color": "#FF0000",
+                    "component_font_color": "#CC000000",
+                    "component_icon": "back_arrow"
+                  }
+                ]
+              },
+              {
+                "item_id": "14",
+                "container_name": "center_toolbar",
+                "container_background_color": "#FFFF00",
+                "item_weight": ".6f",
+                "weight_sum": "1",
+                "components": [
+                  {
+                    "item_id": "15",
+                    "component_type": "text_view",
+                    "component_key_name": "",
+                    "component_label": "Business Expenses Report",
+                    "component_background_color": "#00FF00",
+                    "component_font_color": "#CC000000"
+                  }
+                ]
+              },
+              {
+                "item_id": "16",
+                "container_name": "right_toolbar",
+                "container_background_color": "#F0F0F0",
+                "item_weight": ".2f",
+                "components": [
+                  {
+                    "item_id": "17",
+                    "component_type": "image_view",
+                    "component_key_name": "",
+                    "component_label": "",
+                    "component_background_color": "#0000FF",
+                    "component_font_color": "#CC000000",
+                    "component_icon": "menu_icon"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "item_id": "18",
+            "container_name": "content_container",
+            "container_background_color": "#FFFFFF",
+            "item_orientation": "vertical",
+            "item_weight": ".7f",
+            "weight_sum": "1",
+            "container": [
+              {
+                "item_id": "19",
+                "container_name": "top_container",
+                "container_background_color": "#ff0000",
+                "item_orientation": "vertical",
+                "item_weight": ".3f",
+                "weight_sum": "1",
+                "components": [
+                  {
+                    "item_id": "20",
+                    "component_type": "text_view",
+                    "component_key_name": "",
+                    "component_label": "Barcode",
+                    "component_background_color": "#FFFF00",
+                    "component_font_color": "#D9000000",
+                    "item_weight": ".33f"
+                  },
+                  {
+                    "item_id": "21",
+                    "component_type": "eidt_text",
+                    "component_key_name": "barcode_scan",
+                    "component_label": "",
+                    "component_hint": "Scan a item",
+                    "component_background_color": "#FFFF00",
+                    "component_font_color": "#D9000000",
+                    "item_weight": ".33f"
+                  },
+                  {
+                    "item_id": "22",
+                    "component_type": "text_view",
+                    "component_key_name": "",
+                    "component_label": "Scan Count:",
+                    "component_background_color": "#FFFF00",
+                    "component_font_color": "#D9000000",
+                    "item_weight": ".33f"
+                  }
+                ]
+              },
+              {
+                "item_id": "23",
+                "container_name": "bottom_container",
+                "container_background_color": "#00FF00",
+                "item_orientation": "vertical",
+                "item_weight": ".7f",
+                "weight_sum": "1",
+                "components": [
+                  {
+                    "item_id": "24",
+                    "component_type": "composite",
+                    "component_id": "horizontal_label_label",
+                    "item_orientation": "horizontal",
+                    "component_background_color": "",
+                    "weight_sum": "1",
+                    "components": [
+                      {
+                        "item_id": "25",
+                        "component_type": "text_view",
+                        "component_key_name": "",
+                        "component_label": "Description",
+                        "component_background_color": "",
+                        "component_font_color": "#D9000000",
+                        "item_weight": ".3f"
+                      },
+                      {
+                        "item_id": "26",
+                        "component_type": "text_view",
+                        "component_key_name": "description",
+                        "component_label": "description_key",
+                        "component_background_color": "",
+                        "component_font_color": "#D9000000",
+                        "item_weight": ".7f"
+                      }
+                    ]
+                  },
+                  {
+                    "item_id": "27",
+                    "component_type": "composite",
+                    "component_id": "horizontal_label_label",
+                    "item_orientation": "horizontal",
+                    "component_background_color": "",
+                    "weight_sum": "1",
+                    "components": [
+                      {
+                        "item_id": "28",
+                        "component_type": "text_view",
+                        "component_key_name": "",
+                        "component_label": "Mark No.",
+                        "component_background_color": "",
+                        "component_font_color": "#D9000000",
+                        "item_weight": ".3f"
+                      },
+                      {
+                        "item_id": "29",
+                        "component_type": "text_view",
+                        "component_key_name": "mark_value",
+                        "component_label": "mark_key",
+                        "component_background_color": "",
+                        "component_font_color": "#D9000000",
+                        "item_weight": ".7f"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "item_id": "30",
+            "container_name": "bottom_container",
+            "container_background_color": "#0000FF",
+            "item_orientation": "horizontal",
+            "item_weight": ".15f",
+            "components": [
+              {
+                "item_id": "31",
+                "component_type": "button",
+                "component_key_name": "",
+                "component_label": "Remove",
+                "component_background_color": "#FFFF00",
+                "component_font_color": "#FFFFFF",
+                "item_weight": ".5f"
+              },
+              {
+                "item_id": "32",
+                "component_type": "button",
+                "component_key_name": "",
+                "component_label": "Add",
+                "component_background_color": "#FFFF00",
+                "component_font_color": "#FFFFFF",
+                "item_weight": ".5f",
+                "apis": [
+                  {
+                    "api_url": "http://192.168.26.20:9010/api/User",
+                    "api_input_type": "multipart",
+                    "api_input_parameters": [
+                      {
+                        "key_name": "data",
+                        "value_from": "data"
+                      },
+                      {
+                        "key_name": "From",
+                        "value_from": "From"
+                      },
+                      {
+                        "key_name": "To",
+                        "value_from": "To"
+                      }
+                    ],
+                    "storage_type": "preference",
+                    "storage_field_name": "person_id"
+                  }
+
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "database_tables": [
+      {
+        "table_name": "expense_list_table",
+        "fields": []
+      },
+      {
+        "table_name": "expense_detail_table",
+        "fields": []
+      }
+    ],
+    "status_messages": [],
+    "data_status_code": [],
+    "keys": []
+
+  }
 }

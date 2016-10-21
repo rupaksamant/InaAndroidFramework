@@ -7,64 +7,45 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RootCms {
-	private ApiElement[] apis;
+	private Application application;
 
-	public void setApis(ApiElement[] apis) {
-		this.apis = apis;
+	private String logger;
+
+	private String grid;
+
+	public Application getApplication ()
+	{
+		return application;
 	}
 
-	public ApiElement[] getApis() {
-		return apis;
+	public void setApplication (Application application)
+	{
+		this.application = application;
 	}
 
-	private java.lang.Object[] keys;
-
-	public void setKeys(java.lang.Object[] keys) {
-		this.keys = keys;
+	public String getLogger ()
+	{
+		return logger;
 	}
 
-	public java.lang.Object[] getKeys() {
-		return keys;
+	public void setLogger (String logger)
+	{
+		this.logger = logger;
 	}
 
-	private Database_tablElement[] database_tables;
-
-	public void setDatabase_tables(Database_tablElement[] database_tables) {
-		this.database_tables = database_tables;
+	public String getGrid ()
+	{
+		return grid;
 	}
 
-	public Database_tablElement[] getDatabase_tables() {
-		return database_tables;
+	public void setGrid (String grid)
+	{
+		this.grid = grid;
 	}
 
-	private java.lang.Object[] status_messages;
-
-	public void setStatus_messages(java.lang.Object[] status_messages) {
-		this.status_messages = status_messages;
+	@Override
+	public String toString()
+	{
+		return "ClassPojo [application = "+application+", logger = "+logger+", grid = "+grid+"]";
 	}
-
-	public java.lang.Object[] getStatus_messages() {
-		return status_messages;
-	}
-
-	private ScreenElement[] screens;
-
-	public void setScreens(ScreenElement[] screens) {
-		this.screens = screens;
-	}
-
-	public ScreenElement[] getScreens() {
-		return screens;
-	}
-
-	private java.lang.Object[] data_status_code;
-
-	public void setData_status_code(java.lang.Object[] data_status_code) {
-		this.data_status_code = data_status_code;
-	}
-
-	public java.lang.Object[] getData_status_code() {
-		return data_status_code;
-	}
-
 }

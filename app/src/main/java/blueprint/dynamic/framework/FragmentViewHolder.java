@@ -55,7 +55,7 @@ public class FragmentViewHolder extends Fragment {
         String cmsString = Utils.readJsonFromAssets("cms.json", mActivity);
         if(cmsString != null && cmsString.isEmpty() == false) {
             RootCms config = Utils.stringToCMSJSON(cmsString);
-            ScreenGenerator.getInstance(mActivity).createScreen(config.getScreens()[1], mParentLayout, listener);
+            ScreenGenerator.getInstance(mActivity).createScreen(config.getApplication().getScreens()[1], mParentLayout, listener);
         }
 
         /*BluePrintButtonView buttonView = (BluePrintButtonView) mParentLayout.findViewById(
@@ -67,7 +67,7 @@ public class FragmentViewHolder extends Fragment {
         if( json!= null && json.isEmpty() == false) {
             RootCms config = Utils.stringToCMSJSON(json);
             mParentLayout.removeAllViews();
-            ScreenGenerator.getInstance(mActivity).createScreen(config.getScreens()[1], mParentLayout, listener);
+            ScreenGenerator.getInstance(mActivity).createScreen(config.getApplication().getScreens()[1], mParentLayout, listener);
             Utils.removeProgressDialog();
         }
     }

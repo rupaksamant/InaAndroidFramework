@@ -7,23 +7,23 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Api_input_parameterElement {
-    private java.lang.String value_from;
+    private String value_from;
 
-    public void setValue_from(java.lang.String value_from) {
+    public void setValue_from(String value_from) {
         this.value_from = value_from;
     }
 
-    public java.lang.String getValue_from() {
+    public String getValue_from() {
         return value_from;
     }
 
-    private java.lang.String key_name;
+    private String key_name;
 
-    public void setKey_name(java.lang.String key_name) {
+    public void setKey_name(String key_name) {
         this.key_name = key_name;
     }
 
-    public java.lang.String getKey_name() {
+    public String getKey_name() {
         return key_name;
     }
 
