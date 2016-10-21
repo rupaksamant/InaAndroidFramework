@@ -68,6 +68,7 @@ public class FragmentViewHolder extends Fragment {
             RootCms config = Utils.stringToCMSJSON(json);
             mParentLayout.removeAllViews();
             ScreenGenerator.getInstance(mActivity).createScreen(config.getScreens()[1], mParentLayout, listener);
+            Utils.removeProgressDialog();
         }
     }
 

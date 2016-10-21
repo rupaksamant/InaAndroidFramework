@@ -1,8 +1,11 @@
 package blueprint.dynamic.framework.utils;
 
+import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
+import android.text.SpannableString;
 import android.view.View;
 
 import com.dynamic.framework.R;
@@ -97,6 +100,43 @@ public class Utils {
             return context.getResources().getIdentifier(sId,  "id", context.getPackageName());
         } else {
             return 0;
+        }
+    }
+
+    private static ProgressDialog sProgressDialog = null;
+    public static void showProgressDialog(final Context context, String msg) {
+        removeProgressDialog();
+        sProgressDialog = new ProgressDialog(context);
+
+        if (!msg.isEmpty()) {
+            SpannableString s = new SpannableString(msg);
+            sProgressDialog.setMessage(s);
+        }
+
+        sProgressDialog.setCancelable(false);
+
+        if (!((Activity) context).isFinishing()) {
+            if (!sProgressDialog.isShowing()) {
+                try {
+                    sProgressDialog.show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    /**
+     * Removes the progress dialog that is alreading being displayed.
+     */
+    public static void removeProgressDialog() {
+        try {
+            if (null != sProgressDialog && sProgressDialog.isShowing()) {
+                sProgressDialog.dismiss();
+            }
+            sProgressDialog = null;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
