@@ -149,6 +149,7 @@
             "container_name": "toolbar",
             "item_orientation": "horizontal",
             "container_background_color": "#F0F0F0",
+            "container_type": "linear_layout",
             "item_weight": ".15f",
             "weight_sum": "1",
             "container": [
@@ -156,6 +157,7 @@
                 "item_id": "12",
                 "container_name": "left_toolbar",
                 "container_background_color": "#00FF00",
+                "container_type": "linear_layout",
                 "item_weight": ".2f",
                 "components": [
                   {
@@ -174,6 +176,7 @@
                 "container_name": "center_toolbar",
                 "container_background_color": "#FFFF00",
                 "item_weight": ".6f",
+                "container_type": "linear_layout",
                 "weight_sum": "1",
                 "components": [
                   {
@@ -187,131 +190,56 @@
                 ]
               },
               {
-                "item_id": "16",
                 "container_name": "right_toolbar",
                 "container_background_color": "#F0F0F0",
+                "item_orientation": "vertical",
+                "item_id": "100",
                 "item_weight": ".2f",
                 "components": [
                   {
-                    "item_id": "17",
-                    "component_type": "image_view",
-                    "component_key_name": "",
-                    "component_label": "",
-                    "component_background_color": "#0000FF",
-                    "component_font_color": "#CC000000",
-                    "component_icon": "menu_icon"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "item_id": "18",
-            "container_name": "content_container",
-            "container_background_color": "#FFFFFF",
-            "item_orientation": "vertical",
-            "item_weight": ".7f",
-            "weight_sum": "1",
-            "container": [
-              {
-                "item_id": "19",
-                "container_name": "top_container",
-                "container_background_color": "#ff0000",
-                "item_orientation": "vertical",
-                "item_weight": ".3f",
-                "weight_sum": "1",
-                "components": [
-                  {
-                    "item_id": "20",
-                    "component_type": "text_view",
-                    "component_key_name": "",
-                    "component_label": "Barcode",
-                    "component_background_color": "#FFFF00",
-                    "component_font_color": "#D9000000",
-                    "item_weight": ".33f"
-                  },
-                  {
-                    "item_id": "21",
-                    "component_type": "eidt_text",
-                    "component_key_name": "barcode_scan",
-                    "component_label": "",
-                    "component_hint": "Scan a item",
-                    "component_background_color": "#FFFF00",
-                    "component_font_color": "#D9000000",
-                    "item_weight": ".33f"
-                  },
-                  {
-                    "item_id": "22",
-                    "component_type": "text_view",
-                    "component_key_name": "",
-                    "component_label": "Scan Count:",
-                    "component_background_color": "#FFFF00",
-                    "component_font_color": "#D9000000",
-                    "item_weight": ".33f"
-                  }
-                ]
-              },
-              {
-                "item_id": "23",
-                "container_name": "bottom_container",
-                "container_background_color": "#00FF00",
-                "item_orientation": "vertical",
-                "item_weight": ".7f",
-                "weight_sum": "1",
-                "components": [
-                  {
-                    "item_id": "24",
-                    "component_type": "composite",
-                    "component_id": "horizontal_label_label",
-                    "item_orientation": "horizontal",
-                    "component_background_color": "",
-                    "weight_sum": "1",
+                    "component_type": "vertical_label_spinner",
+                    "component_background_color": "#00FFFF",
+                    "item_id": "101",
+                    "item_weight": "1f",
                     "components": [
                       {
-                        "item_id": "25",
                         "component_type": "text_view",
                         "component_key_name": "",
-                        "component_label": "Description",
-                        "component_background_color": "",
+                        "component_label": "Select Day",
+                        "component_background_color": "#FFFF00",
                         "component_font_color": "#D9000000",
-                        "item_weight": ".3f"
+                        "item_weight": ".5f",
+                        "item_id": "102"
                       },
                       {
-                        "item_id": "26",
-                        "component_type": "text_view",
-                        "component_key_name": "description",
-                        "component_label": "description_key",
-                        "component_background_color": "",
-                        "component_font_color": "#D9000000",
-                        "item_weight": ".7f"
-                      }
-                    ]
-                  },
-                  {
-                    "item_id": "27",
-                    "component_type": "composite",
-                    "component_id": "horizontal_label_label",
-                    "item_orientation": "horizontal",
-                    "component_background_color": "",
-                    "weight_sum": "1",
-                    "components": [
-                      {
-                        "item_id": "28",
-                        "component_type": "text_view",
+                        "component_type": "spinner",
                         "component_key_name": "",
-                        "component_label": "Mark No.",
-                        "component_background_color": "",
+                        "component_label": "",
+                        "component_background_color": "#FFFF00",
                         "component_font_color": "#D9000000",
-                        "item_weight": ".3f"
-                      },
-                      {
-                        "item_id": "29",
-                        "component_type": "text_view",
-                        "component_key_name": "mark_value",
-                        "component_label": "mark_key",
-                        "component_background_color": "",
-                        "component_font_color": "#D9000000",
-                        "item_weight": ".7f"
+                        "item_weight": ".5f",
+                        "item_id": "103",
+                        "components": [
+                          {
+                            "item_id": "105",
+                            "component_type": "text_view",
+                            "component_key_name": "",
+                            "component_label": "",
+                            "component_background_color": "#FF00FF",
+                            "component_font_color": "#D9000000",
+                            "item_weight": ".75f",
+                            "item_title": "Days",
+                            "item_data": [
+                              "Sunday",
+                              "Monday",
+                              "Tuesday",
+                              "Wednesday",
+                              "Thursday",
+                              "Friday",
+                              "Saturday"
+                            ]
+                          }
+                        ]
                       }
                     ]
                   }
@@ -319,28 +247,29 @@
               }
             ]
           },
+
           {
-            "item_id": "30",
+            "item_id": "62",
             "container_name": "bottom_container",
-            "container_background_color": "#0000FF",
+            "container_background_color": "#000000",
             "item_orientation": "horizontal",
             "item_weight": ".15f",
             "components": [
               {
-                "item_id": "31",
+                "item_id": "63",
                 "component_type": "button",
                 "component_key_name": "",
                 "component_label": "Remove",
-                "component_background_color": "#FFFF00",
+                "component_background_color": "#B3B3B3",
                 "component_font_color": "#FFFFFF",
                 "item_weight": ".5f"
               },
               {
-                "item_id": "32",
+                "item_id": "64",
                 "component_type": "button",
                 "component_key_name": "",
                 "component_label": "Add",
-                "component_background_color": "#FFFF00",
+                "component_background_color": "#B3B3B3",
                 "component_font_color": "#FFFFFF",
                 "item_weight": ".5f",
                 "apis": [
@@ -364,7 +293,6 @@
                     "storage_type": "preference",
                     "storage_field_name": "person_id"
                   }
-
                 ]
               }
             ]
@@ -385,6 +313,5 @@
     "status_messages": [],
     "data_status_code": [],
     "keys": []
-
   }
 }

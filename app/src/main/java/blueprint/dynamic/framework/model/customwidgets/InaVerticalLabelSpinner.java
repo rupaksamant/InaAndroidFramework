@@ -1,68 +1,61 @@
 package blueprint.dynamic.framework.model.customwidgets;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.AppCompatSpinner;
-import android.util.AttributeSet;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.dynamic.framework.R;
 
 import blueprint.dynamic.framework.model.cms_model.ComponentElement;
+import blueprint.dynamic.framework.ui_engine.ComponentHelper;
 import blueprint.dynamic.framework.utils.Utils;
 
 /**
- * Created by Techjini on 10/10/2016.
+ * Created by Techjini on 10/24/2016.
  */
-public class BluePrintSpinner  extends AppCompatSpinner {
-
+public class InaVerticalLabelSpinner {
     private Context mContext;
+    private LayoutInflater mLayoutInflater;
 
-    public BluePrintSpinner(Context context) {
-        super(context);
+    public InaVerticalLabelSpinner(Context context) {
         mContext = context;
+        mLayoutInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
-    public BluePrintSpinner(Context context, AttributeSet attrs, int defStyleAttr, int mode, Resources.Theme popupTheme) {
-        super(context, attrs, defStyleAttr, mode, popupTheme);
-    }
 
-    public BluePrintSpinner(Context context, AttributeSet attrs, int defStyleAttr, int mode) {
-        super(context, attrs, defStyleAttr, mode);
-    }
+    public void setComponent(ComponentElement componentElement, ViewGroup parentLayout, String parent_orientation) {
+        LinearLayout spinnerLayout = (LinearLayout) mLayoutInflater.inflate(R.layout.vertical_label_spinner, null, false);
 
-    public BluePrintSpinner(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-    }
+//        spinnerLayout.setId(Utils.getIdFromString(mContext, componentElement.getItem_id()));
+//        ComponentHelper.setLayoutParamsAndOrientation(mContext, spinnerLayout, componentElement, parent_orientation);
 
-    public BluePrintSpinner(Context context, AttributeSet attrs) {
-        super(context, attrs);
-    }
+//        spinnerLayout.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
 
-    public BluePrintSpinner(Context context, int mode) {
-        super(context, mode);
-    }
+        BluePrintTextView label = (BluePrintTextView) spinnerLayout.findViewById(R.id.spinner_label);
+        label.setContext(mContext);
+        label.setComponent(componentElement.getComponents()[0], null, parent_orientation);
 
-    public void setContext(Context context) {
-        mContext = context;
-    }
+        BluePrintSpinner spinner = (BluePrintSpinner) spinnerLayout.findViewById(R.id.spinner_holder);
+        spinner.setTag(componentElement.getComponents()[1]);
+        spinner.setContext(mContext);
+        spinner.setComponent(componentElement.getComponents()[1], spinnerLayout);
 
-    public void setComponent(ComponentElement componentElement, ViewGroup parentLayout) {
-        this.setId(Utils.getIdFromString(mContext, componentElement.getItem_id()));
-        /*ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(getContext(),
-                R.layout.blueprint_spinner_item, componentElement.getComponent_data());
-        setAdapter(spinnerArrayAdapter);
-        setSelection(0);
-        parentLayout.addView(this);*/
+        setComponentColors(componentElement, spinnerLayout);
+
+        System.out.println("InaVerticalLabelSpinner.setComponent");
+
+        parentLayout.addView(spinnerLayout);
 
     }
 
-    public void setComponentColors(ComponentElement componentElement, ViewGroup spinnerLayout) {
+    public void setComponentColors(ComponentElement componentElement, LinearLayout spinnerLayout) {
 //        setClickable(true);
         /*if (componentElement.getComponent_font_color() != null) {
             setTextColor(!componentElement.getComponent_font_color().isEmpty() ? Color.parseColor(componentElement.getComponent_font_color()) : ContextCompat.getColor(mContext, R.color.default_font_color));

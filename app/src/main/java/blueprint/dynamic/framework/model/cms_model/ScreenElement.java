@@ -77,4 +77,14 @@ public class ScreenElement {
 		return weight_sum;
 	}
 
+	private String container_background_color;
+
+	public void setContainer_background_color(String container_background_color) {
+		this.container_background_color = container_background_color;
+	}
+
+	public String getContainer_background_color() {
+		return container_background_color;
+	}
+
 }

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -44,7 +43,7 @@ public class InaLienarContainer extends LinearLayout {
     }
 
     public void setComponent(ContainerElement containerElement, ViewGroup parentLayout, String parent_item_orientation, OnSwipeTouchListener listener) {
-        System.out.println("BluePrintLinearContainer.setComponent contianer id---:"+ Utils.getIdFromString(mContext, containerElement.getItem_id()));
+        System.out.println("BluePrintLinearContainer.setContainer contianer id---:"+ Utils.getIdFromString(mContext, containerElement.getItem_id()));
         this.setId(Utils.getIdFromString(mContext, containerElement.getItem_id()));
         setClickable(true);
         setOrientationAndLayoutParams(containerElement,
@@ -73,31 +72,31 @@ public class InaLienarContainer extends LinearLayout {
 
     private void addComponent(ComponentElement componentElement, String parent_orientation, OnSwipeTouchListener listener) {
 
-        if (Constants.ComponentId.EDIT_TEXT.equalsIgnoreCase(componentElement.getComponent_type())) {
+        if (Constants.ComponentType.EDIT_TEXT.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintEditText editText = new BluePrintEditText(mContext);
             editText.setComponent(componentElement, this);
-        } else if (Constants.ComponentId.BUTTON_VIEW.equalsIgnoreCase(componentElement.getComponent_type())) {
+        } else if (Constants.ComponentType.BUTTON_VIEW.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintButtonView buttonView = new BluePrintButtonView(mContext);
             buttonView.setComponent(componentElement, this, parent_orientation);
-        } else if (Constants.ComponentId.HORIZONTAL_ICON_LABEL.equalsIgnoreCase(componentElement.getComponent_type())) {
+        } else if (Constants.ComponentType.HORIZONTAL_ICON_LABEL.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintEditText editText = new BluePrintEditText(mContext);
             editText.setComponent(componentElement, this);
-        } else if (Constants.ComponentId.HORIZONTAL_ICON_LABEL.equalsIgnoreCase(componentElement.getComponent_type())) {
+        } else if (Constants.ComponentType.HORIZONTAL_ICON_LABEL.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintEditText editText = new BluePrintEditText(mContext);
             editText.setComponent(componentElement, this);
-        } else if (Constants.ComponentId.HORIZONTAL_LABEL_ICON.equalsIgnoreCase(componentElement.getComponent_type())) {
+        } else if (Constants.ComponentType.HORIZONTAL_LABEL_ICON.equalsIgnoreCase(componentElement.getComponent_type())) {
 
-        } else if (Constants.ComponentId.HORIZONTAL_LABEL_LABEL.equalsIgnoreCase(componentElement.getComponent_type())) {
+        } else if (Constants.ComponentType.HORIZONTAL_LABEL_LABEL.equalsIgnoreCase(componentElement.getComponent_type())) {
 
-        } else if (Constants.ComponentId.SPINNER.equalsIgnoreCase(componentElement.getComponent_type())) {
+        } else if (Constants.ComponentType.SPINNER.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintSpinner spinner = new BluePrintSpinner(mContext);
             spinner.setComponent(componentElement, this);
-        } else if (Constants.ComponentId.TEXT_VIEW.equalsIgnoreCase(componentElement.getComponent_type())) {
+        } else if (Constants.ComponentType.TEXT_VIEW.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintTextView textView = new BluePrintTextView(mContext);
             textView.setComponent(componentElement, this, parent_orientation);
-        } else if (Constants.ComponentId.VERTICAL_LABEL_EDIT_TEXT.equalsIgnoreCase(componentElement.getComponent_type())) {
+        } else if (Constants.ComponentType.VERTICAL_LABEL_EDIT_TEXT.equalsIgnoreCase(componentElement.getComponent_type())) {
 
-        } else if (Constants.ComponentId.VERTICAL_LABEL_LABEL.equalsIgnoreCase(componentElement.getComponent_type())) {
+        } else if (Constants.ComponentType.VERTICAL_LABEL_LABEL.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintTextView leftTextView = new BluePrintTextView(mContext);
             leftTextView.setComponent(componentElement, this, parent_orientation);
 
@@ -105,7 +104,7 @@ public class InaLienarContainer extends LinearLayout {
             rightTextView.setComponent(componentElement, this, parent_orientation);
 
 
-        } else if (Constants.ComponentId.VERTICAL_LABEL_SPINNER.equalsIgnoreCase(componentElement.getComponent_type())) {
+        } else if (Constants.ComponentType.VERTICAL_LABEL_SPINNER.equalsIgnoreCase(componentElement.getComponent_type())) {
 
         }
     }

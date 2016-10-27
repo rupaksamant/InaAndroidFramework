@@ -2,6 +2,7 @@ package blueprint.dynamic.framework.model.customwidgets;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Rect;
 import android.graphics.drawable.GradientDrawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.AppCompatTextView;
@@ -40,21 +41,38 @@ public class BluePrintTextView extends AppCompatTextView {
         mContext = context;
     }
 
+    @Override
+    public void getHitRect(Rect r) {
+        super.getHitRect(r); //get hit Rect of current View
+
+        if(r == null) {
+            return;
+        }
+
+        /* Manipulate with rect as you wish */
+        r.top += 40;
+//        r.bottom -= 10;
+    }
+
+    public void setContext(Context context) {
+        mContext = context;
+    }
+
     public void setComponent(ComponentElement componentElement, ViewGroup parentLayout,
                              String parent_orientation) {
-        System.out.println("BluePrintTextView.setComponent---tv id---:"+Utils.getIdFromString(mContext, componentElement.getItem_id()));
+        System.out.println("BluePrintTextView.setContainer---tv id---:"+Utils.getIdFromString(mContext, componentElement.getItem_id()));
         this.setId(Utils.getIdFromString(mContext, componentElement.getItem_id()));
         ComponentHelper.setLayoutParamsAndOrientation(mContext, this, componentElement, parent_orientation);
 
-        if (parentLayout instanceof LinearLayout) {
+//        if (parentLayout instanceof LinearLayout) {
 //            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 //            layoutParams.setMargins(0, 0, (int) mContext.getResources().getDimension(R.dimen.dimen_10_dp), 0);
 //            setLayoutParams(layoutParams);
-        } else if (parentLayout instanceof RelativeLayout) {
+//        } else if (parentLayout instanceof RelativeLayout) {
 //            RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 //            layoutParams.setMargins(0, 0, (int) mContext.getResources().getDimension(R.dimen.dimen_10_dp), 0);
 //            setLayoutParams(layoutParams);
-        }
+//        }
 
         this.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
 
@@ -63,9 +81,10 @@ public class BluePrintTextView extends AppCompatTextView {
         }
 
         setComponentColors(componentElement);
-
-        System.out.println("BluePrintTextView.setComponent---"+componentElement.getComponent_label());
-        parentLayout.addView(this);
+        System.out.println("BluePrintTextView.setContainer---"+componentElement.getComponent_label());
+        if(parentLayout != null) {
+            parentLayout.addView(this);
+        }
     }
 
     public void setComponentColors(ComponentElement componentElement) {

@@ -7,11 +7,20 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.dynamic.framework.R;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import blueprint.dynamic.framework.model.cms_model.ComponentElement;
 import blueprint.dynamic.framework.model.cms_model.RootCms;
+import blueprint.dynamic.framework.model.customwidgets.BluePrintSpinner;
+import blueprint.dynamic.framework.model.customwidgets.InaSpinnerAdapter;
 import blueprint.dynamic.framework.ui_engine.ScreenGenerator;
 import blueprint.dynamic.framework.ui_engine.listeners.OnSwipeTouchListener;
 import blueprint.dynamic.framework.utils.Utils;
@@ -19,7 +28,7 @@ import blueprint.dynamic.framework.utils.Utils;
 /**
  * Created by Techjini on 10/6/2016.
  */
-public class FragmentViewHolder extends Fragment {
+public class FragmentViewHolder extends Fragment implements AdapterView.OnItemSelectedListener{
 
     private View mRootView;
     private LinearLayout mParentLayout;
@@ -61,6 +70,21 @@ public class FragmentViewHolder extends Fragment {
         /*BluePrintButtonView buttonView = (BluePrintButtonView) mParentLayout.findViewById(
                 mActivity.getResources().getIdentifier("31",  "id", mActivity.getPackageName()));
         System.out.println("text set to view---"+buttonView.getText() + ":---:"+buttonView.getId());*/
+
+        BluePrintSpinner spinner = (BluePrintSpinner) mParentLayout.findViewById(
+                mActivity.getResources().getIdentifier("103",  "id", mActivity.getPackageName()));
+        if(spinner != null) {
+            ArrayList<String> data = new ArrayList<>(Arrays.asList(spinnerDataArray));
+            ComponentElement componentElement = (ComponentElement) spinner.getTag();
+            spinnerData = componentElement.getComponents()[0].getItem_data();
+            InaSpinnerAdapter spinnerAdapter = new InaSpinnerAdapter(mActivity, data, componentElement);
+//        spinner.setAdapter(spinnerAdapter);
+            spinner.setOnItemSelectedListener(this);
+            ArrayAdapter adapter = new ArrayAdapter<String>(mActivity, android.R.layout.simple_spinner_dropdown_item, spinnerData);
+            spinner.setAdapter(adapter);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinner.setPrompt(componentElement.getComponents()[0].getItem_title());
+        }
     }
 
     public void updateUi(String json) {
@@ -69,6 +93,20 @@ public class FragmentViewHolder extends Fragment {
             mParentLayout.removeAllViews();
             ScreenGenerator.getInstance(mActivity).createScreen(config.getApplication().getScreens()[1], mParentLayout, listener);
             Utils.removeProgressDialog();
+        }
+        BluePrintSpinner spinner = (BluePrintSpinner) mParentLayout.findViewById(
+                mActivity.getResources().getIdentifier("103",  "id", mActivity.getPackageName()));
+        if(spinner != null) {
+            ComponentElement componentElement = (ComponentElement) spinner.getTag();
+            spinnerData = componentElement.getComponents()[0].getItem_data();
+            ArrayList<String> data = new ArrayList<>(Arrays.asList(spinnerDataArray));
+            InaSpinnerAdapter spinnerAdapter = new InaSpinnerAdapter(mActivity, data, (ComponentElement) spinner.getTag());
+//        spinner.setAdapter(spinnerAdapter);
+            spinner.setOnItemSelectedListener(this);
+            ArrayAdapter adapter = new ArrayAdapter<String>(mActivity, android.R.layout.simple_spinner_dropdown_item, spinnerData);
+            spinner.setAdapter(adapter);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinner.setPrompt(componentElement.getComponents()[0].getItem_title());
         }
     }
 
@@ -101,4 +139,21 @@ public class FragmentViewHolder extends Fragment {
             System.out.println("FragmentViewHolder.onLongClick");
         }
     };
+
+
+    String[] spinnerDataArray = {"1996","1997","1998","1999", "2000"};
+
+    String [] spinnerData;
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        System.out.println("FragmentViewHolder.onItemSelected--------:" + spinnerData[i]);
+        Toast.makeText(mActivity, "Clicked ---"+spinnerData[i], Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+        System.out.println("FragmentViewHolder.onNothingSelected");
+        Toast.makeText(mActivity, "Nothing selected", Toast.LENGTH_SHORT).show();
+    }
 }

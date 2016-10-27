@@ -41,7 +41,7 @@ public class BluePrintButtonView extends Button {
 
     public void setComponent(ComponentElement componentElement, ViewGroup parentLayout,
                              String parent_orientation) {
-        System.out.println("BluePrintButtonView.setComponent-id---:"+Utils.getIdFromString(mContext, componentElement.getItem_id()));
+        System.out.println("BluePrintButtonView.setContainer-id---:"+Utils.getIdFromString(mContext, componentElement.getItem_id()));
         this.setId(Utils.getIdFromString(mContext, componentElement.getItem_id()));
 
         ComponentHelper.setLayoutParamsAndOrientation(mContext, this, componentElement, parent_orientation);
@@ -63,7 +63,7 @@ public class BluePrintButtonView extends Button {
         }
 
         setComponentColors(componentElement);
-        System.out.println("BluePrintTextView.setComponent---"+componentElement.getComponent_label());
+        System.out.println("BluePrintTextView.setContainer---"+componentElement.getComponent_label());
         parentLayout.addView(this);
     }
 

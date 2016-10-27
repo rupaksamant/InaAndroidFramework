@@ -58,7 +58,7 @@ public class ScreenGenerator {
 //            LinearLayout containerLayout = new LinearLayout(mContext);
             if(Constants.ContainerName.TOOLBAR.equalsIgnoreCase(containerElement.getContainer_name())) {
                 InaContainer containerLayout = new InaContainer(mContext);
-                containerLayout.setComponent(containerElement, mParentLayout, parent_item_orientation);
+                containerLayout.setContainer(containerElement, mParentLayout, parent_item_orientation);
                 if (containerElement.getContainer() != null) {
                     createContainers(containerElement.getContainer(), containerLayout.getContainer(), containerElement.getItem_orientation());
                 }
@@ -66,7 +66,7 @@ public class ScreenGenerator {
 
             } else /*if(Constants.ContainerName.CONTAINER_CONTENT.equalsIgnoreCase(containerElement.getContainer_name()))*/{
                 InaContainer containerLayout = new InaContainer(mContext);
-                containerLayout.setComponent(containerElement, mParentLayout, parent_item_orientation);
+                containerLayout.setContainer(containerElement, mParentLayout, parent_item_orientation);
                 if (containerElement.getContainer() != null) {
                     createContainers(containerElement.getContainer(), containerLayout.getContainer(), containerElement.getItem_orientation());
                 }

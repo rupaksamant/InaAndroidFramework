@@ -126,4 +126,38 @@ public class ComponentElement {
 	public ApiElement[] getApis() {
 		return apis;
 	}
+
+	private ContainerElement[] container;
+
+	public void setContainer(ContainerElement[] container) {
+		this.container = container;
+	}
+
+	public ContainerElement[] getContainer() {
+		return container;
+	}
+
+	private String[] item_data;
+
+	public String[] getItem_data ()
+	{
+		return item_data;
+	}
+
+	public void setItem_data (String[] item_data)
+	{
+		this.item_data = item_data;
+	}
+
+	private String item_title;
+
+	public String getItem_title ()
+	{
+		return item_title;
+	}
+
+	public void setItem_title (String item_title)
+	{
+		this.item_title = item_title;
+	}
 }

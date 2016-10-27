@@ -49,8 +49,8 @@ public class BluePrintVerticalLabelLabel /*extends View*/ {
         BluePrintTextView topText = (BluePrintTextView) view.findViewById(R.id.lable_top);
         BluePrintTextView bottomText = (BluePrintTextView) view.findViewById(R.id.lable_bottom);
 
-//        topText.setComponent(component.getComponents()[0], view, parent_orientation);
-//        bottomText.setComponent(component.getComponents()[1], view, parent_orientation);
+//        topText.setContainer(component.getComponents()[0], view, parent_orientation);
+//        bottomText.setContainer(component.getComponents()[1], view, parent_orientation);
 
 //        parentView.addView(view);
     }
