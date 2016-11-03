@@ -45,8 +45,11 @@ public class Constants {
     }
 
     public static class DefaultValue {
-        public static final int BUTTUON_HEIGHT = 45;
-        public static final int BUTTUON_WIDTH = 80;
+        public static final int PADDING = 5;
+        public static final int MARGIN = 5;
+
+        public static final int BUTTUON_HEIGHT = 80;
+        public static final int BUTTUON_WIDTH = 120;
 
         public static final int LABEL_HEIGHT = 45;
         public static final int LABEL_WIDTH = 80;
@@ -56,6 +59,14 @@ public class Constants {
 
         public static final int SPINNER_HEIGHT = 45;
         public static final int SPINNER_WIDTH = 80;
+
+        public static final int VERTICAL_SCROLL_ITEM_HEIGHT = 45;
+        public static final int VERTICAL_SCROLL_ITEM_WIDTH = 80;
+
+        public static final int TEXT_VIEW_HEIGHT = 45;
+        public static final int TEXT_VIEW_WIDTH = 80;
+        public static final int TEXT_VIEW_MARGIN = 5;
+        public static final int TEXT_VIEW_PADDING = 5;
     }
 
     public static class ContainerName {

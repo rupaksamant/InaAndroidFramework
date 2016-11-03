@@ -6,6 +6,7 @@ import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.text.SpannableString;
+import android.util.DisplayMetrics;
 import android.view.View;
 
 import com.dynamic.framework.R;
@@ -138,5 +139,39 @@ public class Utils {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Method to convert dp to pixels.
+     *
+     * @param context Actvitiy context
+     * @param dp      DP value that has to be converted to pixels
+     * @return pixel values from the dp value
+     */
+    public static int pxTodp(Activity context, int px) {
+        DisplayMetrics metrics = new DisplayMetrics();
+        context.getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        float logicalDensity = metrics.density;
+        return ((int) Math.ceil(px * logicalDensity));
+    }
+
+    /**
+     * Method to convert dp to pixels.
+     *
+     * @param context Actvitiy context
+     * @param sp      SP value that has to be converted to pixels
+     * @return pixel values from the dp value
+     */
+    public static int spToPx(Context context, int sp) {
+        /*DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp, metrics);*/
+
+        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+        displayMetrics = context.getResources().getDisplayMetrics();
+        return (int) ((sp * displayMetrics.density) + 0.5);
+
+        /*DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+        int px = Math.round(sp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
+        return px;*/
     }
 }

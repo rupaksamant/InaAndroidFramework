@@ -1,5 +1,6 @@
 package blueprint.dynamic.framework.model.customwidgets;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Rect;
@@ -17,6 +18,7 @@ import com.dynamic.framework.R;
 import blueprint.dynamic.framework.model.cms_model.ComponentElement;
 import blueprint.dynamic.framework.ui_engine.ComponentHelper;
 import blueprint.dynamic.framework.ui_engine.listeners.OnSwipeTouchListener;
+import blueprint.dynamic.framework.utils.Constants;
 import blueprint.dynamic.framework.utils.Utils;
 
 /**
@@ -62,7 +64,9 @@ public class BluePrintTextView extends AppCompatTextView {
                              String parent_orientation) {
         System.out.println("BluePrintTextView.setContainer---tv id---:"+Utils.getIdFromString(mContext, componentElement.getItem_id()));
         this.setId(Utils.getIdFromString(mContext, componentElement.getItem_id()));
-        ComponentHelper.setLayoutParamsAndOrientation(mContext, this, componentElement, parent_orientation);
+        int defaultHeight = Utils.pxTodp(((Activity) mContext), Constants.DefaultValue.TEXT_VIEW_HEIGHT);
+        int defaultWidth = Utils.pxTodp(((Activity) mContext), Constants.DefaultValue.TEXT_VIEW_WIDTH);
+        ComponentHelper.setLayoutParamsAndOrientation(mContext, this, componentElement, parent_orientation, defaultHeight, defaultWidth);
 
 //        if (parentLayout instanceof LinearLayout) {
 //            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);

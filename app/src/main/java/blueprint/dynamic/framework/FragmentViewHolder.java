@@ -74,10 +74,11 @@ public class FragmentViewHolder extends Fragment implements AdapterView.OnItemSe
         BluePrintSpinner spinner = (BluePrintSpinner) mParentLayout.findViewById(
                 mActivity.getResources().getIdentifier("103",  "id", mActivity.getPackageName()));
         if(spinner != null) {
-            ArrayList<String> data = new ArrayList<>(Arrays.asList(spinnerDataArray));
+//            ArrayList<String> data = new ArrayList<>(Arrays.asList(spinnerDataArray));
             ComponentElement componentElement = (ComponentElement) spinner.getTag();
             spinnerData = componentElement.getComponents()[0].getItem_data();
-            InaSpinnerAdapter spinnerAdapter = new InaSpinnerAdapter(mActivity, data, componentElement);
+            ArrayList<String> data = new ArrayList<>(Arrays.asList(spinnerData));
+//            InaSpinnerAdapter spinnerAdapter = new InaSpinnerAdapter(mActivity, data, componentElement);
 //        spinner.setAdapter(spinnerAdapter);
             spinner.setOnItemSelectedListener(this);
             ArrayAdapter adapter = new ArrayAdapter<String>(mActivity, android.R.layout.simple_spinner_dropdown_item, spinnerData);

@@ -1,5 +1,6 @@
 package blueprint.dynamic.framework.ui_engine;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -8,12 +9,13 @@ import com.dynamic.framework.R;
 
 import blueprint.dynamic.framework.model.cms_model.ComponentElement;
 import blueprint.dynamic.framework.utils.Constants;
+import blueprint.dynamic.framework.utils.Utils;
 
 /**
  * Created by Techjini on 10/17/2016.
  */
 public class ComponentHelper {
-    public static void setLayoutParamsAndOrientation(Context context, View view, ComponentElement componentElement, String parent_orientation) {
+    public static void setLayoutParamsAndOrientation(Context context, View view, ComponentElement componentElement, String parent_orientation, int defaultHeight, int defaultWidth) {
         String weight = componentElement.getItem_weight();
         int margin = (int) context.getResources().getDimension(R.dimen.dimen_5_dp);
         int padding = (int) context.getResources().getDimension(R.dimen.dimen_5_dp);
@@ -53,9 +55,9 @@ public class ComponentHelper {
             view.setLayoutParams(params4);
             view.setPadding(padding, padding, padding, padding);
         }
+        view.setMinimumWidth(defaultWidth);
+        view.setMinimumHeight(defaultHeight);
     }
-
-    ;
 
     public static void setComponentColors(View view, ComponentElement componentElement, Context context) {
         /*BluePrintTextView bptv;
