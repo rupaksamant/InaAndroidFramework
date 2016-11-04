@@ -37,6 +37,7 @@ public class Constants {
         public static final String VERTICAL_SCROLL_LAYOUT = "vertical_scroll_layout";
         public static final String LINEAR_LAYOUT = "linear_layout";
         public static final String RELATIVE_LAYOUT = "relative_layout";
+        public static final String LIST_LAYOUT = "list_layout";
     }
 
     public static class Orientation {

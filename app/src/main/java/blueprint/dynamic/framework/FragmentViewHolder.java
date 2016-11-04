@@ -20,7 +20,7 @@ import java.util.Arrays;
 import blueprint.dynamic.framework.model.cms_model.ComponentElement;
 import blueprint.dynamic.framework.model.cms_model.RootCms;
 import blueprint.dynamic.framework.model.customwidgets.BluePrintSpinner;
-import blueprint.dynamic.framework.model.customwidgets.InaSpinnerAdapter;
+import blueprint.dynamic.framework.model.customwidgets.adapters.InaSpinnerAdapter;
 import blueprint.dynamic.framework.ui_engine.ScreenGenerator;
 import blueprint.dynamic.framework.ui_engine.listeners.OnSwipeTouchListener;
 import blueprint.dynamic.framework.utils.Utils;

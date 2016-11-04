@@ -1,4 +1,4 @@
-package blueprint.dynamic.framework.model.customwidgets;
+package blueprint.dynamic.framework.model.customwidgets.adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -16,6 +16,7 @@ import com.dynamic.framework.R;
 import java.util.ArrayList;
 
 import blueprint.dynamic.framework.model.cms_model.ComponentElement;
+import blueprint.dynamic.framework.model.customwidgets.BluePrintTextView;
 import blueprint.dynamic.framework.utils.Constants;
 import blueprint.dynamic.framework.utils.Utils;
 

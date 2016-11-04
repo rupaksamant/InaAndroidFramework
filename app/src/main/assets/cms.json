@@ -1,7 +1,5 @@
 {
-  "grid": null,
-  "logger": null,
-  "application": {
+  "configSettings": {
     "apis": [
       {
         "api_url": "http://192.168.26.20:9010/api/User",
@@ -307,7 +305,7 @@
                     "item_id": "31",
                     "container_background_color": "#ff0000",
                     "container_type": "vertical_scroll_layout",
-                    "item_weight": ".8f",
+                    "item_weight": ".4f",
                     "container": [
                       {
                         "item_id": "31",
@@ -435,6 +433,69 @@
                             "component_label": "Barcode 15",
                             "component_background_color": "#FFFF00",
                             "component_font_color": "#D9000000"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "item_id": "1007",
+                    "container_background_color": "#0000ff",
+                    "container_type": "list_layout",
+                    "item_orientation":"vertical",
+                    "item_weight": ".4f",
+                    "components": [
+                      {
+                        "item_id": "1006",
+                        "component_background_color": "#ff0000",
+                        "component_type": "horizontal_label_label",
+                        "item_weight": ".5f",
+                        "item_orientation": "horizontal",
+                        "components": [
+                          {
+                            "item_id": "1005",
+                            "component_type": "text_view",
+                            "component_key_name": "",
+                            "component_label": "Barcode 1",
+                            "component_background_color": "#FFFF00",
+                            "component_font_color": "#D9000000",
+                            "item_weight": ".7f"
+                          },
+                          {
+                            "item_id": "1004",
+                            "component_type": "text_view",
+                            "component_key_name": "",
+                            "component_label": "Barcode 2",
+                            "component_background_color": "#FFFF00",
+                            "component_font_color": "#D9000000",
+                            "item_weight": ".3f"
+                          }
+                        ]
+                      },
+                      {
+                        "item_id": "1003",
+                        "component_background_color": "#ff0000",
+                        "component_type": "horizontal_label_label",
+                        "item_weight": ".5f",
+                        "item_orientation": "horizontal",
+                        "components": [
+                          {
+                            "item_id": "1002",
+                            "component_type": "text_view",
+                            "component_key_name": "",
+                            "component_label": "Barcode 3",
+                            "component_background_color": "#FFFF00",
+                            "component_font_color": "#D9000000",
+                            "item_weight": ".7f"
+                          },
+                          {
+                            "item_id": "1001",
+                            "component_type": "text_view",
+                            "component_key_name": "",
+                            "component_label": "Barcode 4",
+                            "component_background_color": "#FFFF00",
+                            "component_font_color": "#D9000000",
+                            "item_weight": ".3f"
                           }
                         ]
                       }
@@ -767,25 +828,7 @@
                 "component_label": "Remove",
                 "component_background_color": "#B3B3B3",
                 "component_font_color": "#FFFFFF",
-                "item_weight": ".4f"
-              },
-              {
-                "item_id": "63",
-                "component_type": "button",
-                "component_key_name": "",
-                "component_label": "Remove 2",
-                "component_background_color": "#B3B3B3",
-                "component_font_color": "#FFFFFF",
-                "item_weight": ".3f"
-              },
-              {
-                "item_id": "63",
-                "component_type": "button",
-                "component_key_name": "",
-                "component_label": "Remove 3",
-                "component_background_color": "#B3B3B3",
-                "component_font_color": "#FFFFFF",
-                "item_weight": ".2f"
+                "item_weight": ".5f"
               },
               {
                 "item_id": "64",
@@ -794,7 +837,7 @@
                 "component_label": "Add",
                 "component_background_color": "#B3B3B3",
                 "component_font_color": "#FFFFFF",
-                "item_weight": ".1f",
+                "item_weight": ".5f",
                 "apis": [
                   {
                     "api_url": "http://192.168.26.20:9010/api/User",
@@ -836,5 +879,9 @@
     "status_messages": [],
     "data_status_code": [],
     "keys": []
-  }
+  },
+  "queryData": {
+    "appId": "1"
+  },
+  "settingType": "Application"
 }

@@ -61,7 +61,7 @@ public class BluePrintTextView extends AppCompatTextView {
     }
 
     public void setComponent(ComponentElement componentElement, ViewGroup parentLayout,
-                             String parent_orientation) {
+                             String parent_orientation, boolean addToParent) {
         System.out.println("BluePrintTextView.setContainer---tv id---:"+Utils.getIdFromString(mContext, componentElement.getItem_id()));
         this.setId(Utils.getIdFromString(mContext, componentElement.getItem_id()));
         int defaultHeight = Utils.pxTodp(((Activity) mContext), Constants.DefaultValue.TEXT_VIEW_HEIGHT);
@@ -86,7 +86,7 @@ public class BluePrintTextView extends AppCompatTextView {
 
         setComponentColors(componentElement);
         System.out.println("BluePrintTextView.setContainer---"+componentElement.getComponent_label());
-        if(parentLayout != null) {
+        if(addToParent && parentLayout != null) {
             parentLayout.addView(this);
         }
     }

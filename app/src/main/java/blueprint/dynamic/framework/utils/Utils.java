@@ -7,6 +7,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.text.SpannableString;
 import android.util.DisplayMetrics;
+import android.view.LayoutInflater;
 import android.view.View;
 
 import com.dynamic.framework.R;
@@ -173,5 +174,9 @@ public class Utils {
         /*DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
         int px = Math.round(sp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
         return px;*/
+    }
+
+    public static LayoutInflater getLayoutInflater(Context context) {
+        return (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 }

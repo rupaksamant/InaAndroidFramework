@@ -13,21 +13,21 @@ import blueprint.dynamic.framework.utils.Utils;
 /**
  * Created by Techjini on 10/10/2016.
  */
-public class BluePrintVerticalLabelLabel /*extends View*/ {
+public class InaVerticalLabelLabel /*extends View*/ {
 
     private Context mContext;
 
-    public BluePrintVerticalLabelLabel(Context context) {
+    public InaVerticalLabelLabel(Context context) {
 //        super(context);
         mContext = context;
     }
 
-    /*public BluePrintVerticalLabelLabel(Context context, AttributeSet attrs) {
+    /*public InaVerticalLabelLabel(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
     }
 
-    public BluePrintVerticalLabelLabel(Context context, AttributeSet attrs, int defStyleAttr) {
+    public InaVerticalLabelLabel(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mContext = context;
     }*/
