@@ -33,7 +33,7 @@ public class InaContainer {
 
     public void setContainer(ContainerElement containerElement, ViewGroup parentLayout, String parent_item_orientation) {
 
-        System.out.println("BluePrintLinearContainer.setContainer contianer id---:"+ Utils.getIdFromString(mContext, containerElement.getItem_id()));
+        System.out.println("BluePrintLinearContainer.setContainer contianer id---:" + Utils.getIdFromString(mContext, containerElement.getItem_id()));
 
         createConcreteContainer(containerElement, parent_item_orientation);
 
@@ -46,9 +46,12 @@ public class InaContainer {
 
         setBackgroundColor(mContainer, mContext, containerElement.getContainer_background_color(), R.color.container_defualt_color);
 
-        if(containerElement.getContainer_type() == Constants.ContainerType.LIST_LAYOUT) {
-//            setListViewAdapter(containerElement);
-        }else if (containerElement.getComponents() != null) {
+        if (containerElement.getContainer_type() == Constants.ContainerType.LIST_LAYOUT) {
+            // List container should not contian any direct child component instead it should wrapped with contianer
+            // just for precaution this check
+            // do nothing if it contians direct child component
+            // and the JSON structure should include the child component within a contianer of type ADAPTER_ITEM_LAYOUT
+        } else if (containerElement.getComponents() != null) {
             addComponents(containerElement.getComponents(), containerElement.getItem_orientation(), mContainer);
         }
 
@@ -58,12 +61,12 @@ public class InaContainer {
 
     private void createConcreteContainer(ContainerElement containerElement, String parent_item_orientation) {
         String type = containerElement.getContainer_type();
-        if(type != null && type.isEmpty() == false) {
-            if(type.equalsIgnoreCase(Constants.ContainerType.HORIZONTAL_SCROLL_LAYOUT)){
+        if (type != null && type.isEmpty() == false) {
+            if (type.equalsIgnoreCase(Constants.ContainerType.HORIZONTAL_SCROLL_LAYOUT)) {
                 mContainer = new HorizontalScrollView(mContext);
-            } else if(type.equalsIgnoreCase(Constants.ContainerType.VERTICAL_SCROLL_LAYOUT)){
+            } else if (type.equalsIgnoreCase(Constants.ContainerType.VERTICAL_SCROLL_LAYOUT)) {
                 mContainer = new ScrollView(mContext);
-            } else if(type.equalsIgnoreCase(Constants.ContainerType.LIST_LAYOUT)){
+            } else if (type.equalsIgnoreCase(Constants.ContainerType.LIST_LAYOUT)) {
                 InaListView listView = new InaListView(mContext);
                 mContainer = listView.getRootView();
                 listView.setComponent(containerElement);
@@ -165,11 +168,11 @@ public class InaContainer {
             params3.setMargins(margin, margin, margin, margin);
             mContainer.setLayoutParams(params3);
         }
-        if(mContainer instanceof LinearLayout) {
+        if (mContainer instanceof LinearLayout) {
             if (Constants.Orientation.HORIZONTAL.equalsIgnoreCase(orientation)) {
-                ((LinearLayout)mContainer).setOrientation(LinearLayout.HORIZONTAL);
+                ((LinearLayout) mContainer).setOrientation(LinearLayout.HORIZONTAL);
             } else {
-                ((LinearLayout)mContainer).setOrientation(LinearLayout.VERTICAL);
+                ((LinearLayout) mContainer).setOrientation(LinearLayout.VERTICAL);
             }
         }
         if (weight_sum != null && weight_sum.isEmpty() == false) {

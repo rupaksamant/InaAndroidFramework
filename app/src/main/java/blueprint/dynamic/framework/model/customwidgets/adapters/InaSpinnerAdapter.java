@@ -113,7 +113,7 @@ public class InaSpinnerAdapter extends BaseAdapter implements SpinnerAdapter{
                               ViewGroup mContainer, String label) {
         if (Constants.ComponentType.TEXT_VIEW.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintTextView textView = new BluePrintTextView(mContext);
-            textView.setComponent(componentElement, mContainer, parent_orientation);
+            textView.setComponent(componentElement, mContainer, parent_orientation, true);
             textView.setText(label);
 //            expandTouchArea(mContainer, textView, 600);
         } else if (Constants.ComponentType.IMAGE_VIEW.equalsIgnoreCase(componentElement.getComponent_type())) {

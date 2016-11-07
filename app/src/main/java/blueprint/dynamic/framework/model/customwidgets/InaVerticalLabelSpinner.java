@@ -40,7 +40,7 @@ public class InaVerticalLabelSpinner {
 
         BluePrintTextView label = (BluePrintTextView) spinnerLayout.findViewById(R.id.spinner_label);
         label.setContext(mContext);
-        label.setComponent(componentElement.getComponents()[0], null, parent_orientation);
+        label.setComponent(componentElement.getComponents()[0], null, parent_orientation, false);
 
         BluePrintSpinner spinner = (BluePrintSpinner) spinnerLayout.findViewById(R.id.spinner_holder);
         spinner.setTag(componentElement.getComponents()[1]);
