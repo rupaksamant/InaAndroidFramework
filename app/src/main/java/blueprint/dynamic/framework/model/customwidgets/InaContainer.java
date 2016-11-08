@@ -123,10 +123,6 @@ public class InaContainer {
 
             BluePrintTextView rightTextView = new BluePrintTextView(context);
             rightTextView.setComponent(componentElement, container, parent_orientation, true);
-
-
-        } else if (Constants.ComponentType.VERTICAL_LABEL_SPINNER.equalsIgnoreCase(componentElement.getComponent_type())) {
-
         }
     }
 
