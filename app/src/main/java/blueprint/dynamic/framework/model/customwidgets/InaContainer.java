@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.provider.Settings;
 import android.support.v4.content.ContextCompat;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
@@ -92,6 +93,9 @@ public class InaContainer {
         } else if (Constants.ComponentType.BUTTON_VIEW.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintButtonView buttonView = new BluePrintButtonView(context);
             buttonView.setComponent(componentElement, container, parent_orientation);
+        } else if (Constants.ComponentType.IMAGE_VIEW.equalsIgnoreCase(componentElement.getComponent_type())) {
+            InaImageView iamgeView = new InaImageView(context);
+            iamgeView.setComponent(componentElement, container, parent_orientation, true);
         } else if (Constants.ComponentType.HORIZONTAL_ICON_LABEL.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintEditText editText = new BluePrintEditText(context);
             editText.setComponent(componentElement, container);
@@ -137,37 +141,42 @@ public class InaContainer {
 
     private void setOrientationAndLayoutParams(String orientation, String weight, String parent_item_orientation, String weight_sum) {
         int margin = (int) mContext.getResources().getDimension(R.dimen.dimen_5_dp);
-
+        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mContainer.getLayoutParams();
         if (Constants.Orientation.HORIZONTAL.equalsIgnoreCase(parent_item_orientation)) {
             if (weight != null && weight.isEmpty() == false) {
-                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(0,
+                params = new LinearLayout.LayoutParams(0,
                         ViewGroup.LayoutParams.MATCH_PARENT, Float.parseFloat(weight));
                 params.setMargins(margin, margin, margin, margin);
                 mContainer.setLayoutParams(params);
             } else {
-                LinearLayout.LayoutParams params1 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                         ViewGroup.LayoutParams.MATCH_PARENT);
-                params1.setMargins(margin, margin, margin, margin);
-                mContainer.setLayoutParams(params1);
+//                params.setMargins(margin, margin, margin, margin);
+//                mContainer.setLayoutParams(params);
             }
         } else if (Constants.Orientation.VERTICAL.equalsIgnoreCase(parent_item_orientation)) {
             if (weight != null && weight.isEmpty() == false) {
-                LinearLayout.LayoutParams params2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                         0, Float.parseFloat(weight));
-                params2.setMargins(margin, margin, margin, margin);
-                mContainer.setLayoutParams(params2);
+//                params.setMargins(margin, margin, margin, margin);
+//                mContainer.setLayoutParams(params);
             } else {
-                LinearLayout.LayoutParams params3 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                         ViewGroup.LayoutParams.MATCH_PARENT);
-                params3.setMargins(margin, margin, margin, margin);
-                mContainer.setLayoutParams(params3);
+//                params.setMargins(margin, margin, margin, margin);
+//                mContainer.setLayoutParams(params);
             }
         } else {
-            LinearLayout.LayoutParams params3 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+            params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.MATCH_PARENT);
-            params3.setMargins(margin, margin, margin, margin);
-            mContainer.setLayoutParams(params3);
+//            params.setMargins(margin, margin, margin, margin);
+//            mContainer.setLayoutParams(params);
         }
+
+        params.setMargins(margin, margin, margin, margin);
+        params.gravity = (Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+
+        mContainer.setLayoutParams(params);
         if (mContainer instanceof LinearLayout) {
             if (Constants.Orientation.HORIZONTAL.equalsIgnoreCase(orientation)) {
                 ((LinearLayout) mContainer).setOrientation(LinearLayout.HORIZONTAL);

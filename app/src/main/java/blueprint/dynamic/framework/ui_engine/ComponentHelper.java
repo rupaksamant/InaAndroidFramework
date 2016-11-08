@@ -2,6 +2,7 @@ package blueprint.dynamic.framework.ui_engine;
 
 import android.app.Activity;
 import android.content.Context;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -15,45 +16,55 @@ import blueprint.dynamic.framework.utils.Utils;
  * Created by Techjini on 10/17/2016.
  */
 public class ComponentHelper {
-    public static void setLayoutParamsAndOrientation(Context context, View view, ComponentElement componentElement, String parent_orientation, int defaultHeight, int defaultWidth) {
+    public static void setLayoutParamsAndOrientation(Context context, View view,
+                                                     ComponentElement componentElement, String parent_orientation,
+                                                     int defaultHeight, int defaultWidth,
+                                                     int defaultMargin, int defaultPadding) {
         String weight = componentElement.getItem_weight();
-        int margin = (int) context.getResources().getDimension(R.dimen.dimen_2_dp);
-        int padding = (int) context.getResources().getDimension(R.dimen.dimen_2_dp);
-
+//        int margin = (int) context.getResources().getDimension(R.dimen.dimen_2_dp);
+//        int padding = (int) context.getResources().getDimension(R.dimen.dimen_2_dp);
+        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) view.getLayoutParams();
         if (Constants.Orientation.HORIZONTAL.equalsIgnoreCase(parent_orientation)) {
             if (weight != null && weight.isEmpty() == false) {
-                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(0,
+                params = new LinearLayout.LayoutParams(0,
                         LinearLayout.LayoutParams.MATCH_PARENT, Float.parseFloat(weight));
-                params.setMargins(margin, margin, margin, margin);
-                view.setLayoutParams(params);
-                view.setPadding(padding, padding, padding, padding);
+//                params.setMargins(margin, margin, margin, margin);
+//                view.setLayoutParams(params);
+//                view.setPadding(padding, padding, padding, padding);
             } else {
-                LinearLayout.LayoutParams params1 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                         LinearLayout.LayoutParams.MATCH_PARENT);
-                params1.setMargins(margin, margin, margin, margin);
-                view.setLayoutParams(params1);
-                view.setPadding(padding, padding, padding, padding);
+//                params.setMargins(margin, margin, margin, margin);
+//                view.setLayoutParams(params);
+//                view.setPadding(padding, padding, padding, padding);
             }
         } else if (Constants.Orientation.VERTICAL.equalsIgnoreCase(parent_orientation)) {
             if (weight != null && weight.isEmpty() == false) {
-                LinearLayout.LayoutParams params2 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                         0, Float.parseFloat(weight));
-                params2.setMargins(margin, margin, margin, margin);
-                view.setLayoutParams(params2);
+//                params2.setMargins(margin, margin, margin, margin);
+//                view.setLayoutParams(params2);
             } else {
-                LinearLayout.LayoutParams params3 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                         LinearLayout.LayoutParams.MATCH_PARENT);
-                params3.setMargins(margin, margin, margin, margin);
-                view.setLayoutParams(params3);
-                view.setPadding(padding, padding, padding, padding);
+//                params.setMargins(margin, margin, margin, margin);
+//                view.setLayoutParams(params);
+//                view.setPadding(padding, padding, padding, padding);
             }
         } else {
-            LinearLayout.LayoutParams params4 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
+            params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT);
-            params4.setMargins(margin, margin, margin, margin);
-            view.setLayoutParams(params4);
-            view.setPadding(padding, padding, padding, padding);
+//            params.setMargins(margin, margin, margin, margin);
+//            view.setLayoutParams(params);
         }
+
+        params.setMargins(defaultMargin, defaultMargin, defaultMargin, defaultMargin);
+        params.gravity = (Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+
+
+        view.setPadding(defaultPadding, defaultPadding, defaultPadding, defaultPadding);
+        view.setLayoutParams(params);
+
         view.setMinimumWidth(defaultWidth);
         view.setMinimumHeight(defaultHeight);
     }

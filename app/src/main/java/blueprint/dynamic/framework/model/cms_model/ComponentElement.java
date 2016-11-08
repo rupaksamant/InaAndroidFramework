@@ -160,4 +160,16 @@ public class ComponentElement {
 	{
 		this.item_title = item_title;
 	}
+
+	private String component_icon;
+
+	public String getComponent_icon ()
+	{
+		return component_icon;
+	}
+
+	public void setComponent_icon (String icon)
+	{
+		this.component_icon = icon;
+	}
 }

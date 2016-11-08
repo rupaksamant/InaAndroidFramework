@@ -47,8 +47,11 @@ public class BluePrintButtonView extends Button {
 
         int defaultHeight = Utils.pxTodp(((Activity) mContext), Constants.DefaultValue.BUTTUON_HEIGHT);
         int defaultWidth = Utils.pxTodp(((Activity) mContext), Constants.DefaultValue.BUTTUON_WIDTH);
+        int defaultMargin = Utils.pxTodp(((Activity) mContext), Constants.DefaultValue.BUTTUON_VIEW_MARGIN);
+        int defaultPadding = Utils.pxTodp(((Activity) mContext), Constants.DefaultValue.BUTTUON_VIEW_PADDING);
 
-        ComponentHelper.setLayoutParamsAndOrientation(mContext, this, componentElement, parent_orientation, defaultHeight, defaultWidth);
+        ComponentHelper.setLayoutParamsAndOrientation(mContext, this, componentElement,
+                parent_orientation, defaultHeight, defaultWidth, defaultMargin, defaultPadding);
 
         if (parentLayout instanceof LinearLayout) {
 //            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);

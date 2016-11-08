@@ -10,14 +10,11 @@ import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 import com.dynamic.framework.R;
 
 import blueprint.dynamic.framework.model.cms_model.ComponentElement;
 import blueprint.dynamic.framework.ui_engine.ComponentHelper;
-import blueprint.dynamic.framework.ui_engine.listeners.OnSwipeTouchListener;
 import blueprint.dynamic.framework.utils.Constants;
 import blueprint.dynamic.framework.utils.Utils;
 
@@ -66,7 +63,10 @@ public class BluePrintTextView extends AppCompatTextView {
         this.setId(Utils.getIdFromString(mContext, componentElement.getItem_id()));
         int defaultHeight = Utils.pxTodp(((Activity) mContext), Constants.DefaultValue.TEXT_VIEW_HEIGHT);
         int defaultWidth = Utils.pxTodp(((Activity) mContext), Constants.DefaultValue.TEXT_VIEW_WIDTH);
-        ComponentHelper.setLayoutParamsAndOrientation(mContext, this, componentElement, parent_orientation, defaultHeight, defaultWidth);
+        int defaultMargin = Utils.pxTodp(((Activity) mContext), Constants.DefaultValue.TEXT_VIEW_MARGIN);
+        int defaultPadding = Utils.pxTodp(((Activity) mContext), Constants.DefaultValue.TEXT_VIEW_PADDING);
+        ComponentHelper.setLayoutParamsAndOrientation(mContext, this, componentElement, parent_orientation,
+                defaultHeight, defaultWidth, defaultMargin, defaultPadding);
 
 //        if (parentLayout instanceof LinearLayout) {
 //            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);

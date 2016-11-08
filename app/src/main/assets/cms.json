@@ -159,6 +159,7 @@
                 "container_background_color": "#00FF00",
                 "container_type": "linear_layout",
                 "item_weight": ".2f",
+                "item_orientation":"vertical",
                 "components": [
                   {
                     "item_id": "13",
@@ -167,7 +168,7 @@
                     "component_label": "",
                     "component_background_color": "#FF0000",
                     "component_font_color": "#CC000000",
-                    "component_icon": "back_arrow"
+                    "component_icon": "icn_pierian"
                   }
                 ]
               },
@@ -176,6 +177,7 @@
                 "container_name": "center_toolbar",
                 "container_background_color": "#FFFF00",
                 "item_weight": ".6f",
+                "item_orientation":"horizontal",
                 "container_type": "linear_layout",
                 "weight_sum": "1",
                 "components": [
