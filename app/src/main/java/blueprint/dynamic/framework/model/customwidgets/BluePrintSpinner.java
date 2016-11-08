@@ -54,6 +54,12 @@ public class BluePrintSpinner  extends AppCompatSpinner {
 
     public void setComponent(ComponentElement componentElement, ViewGroup parentLayout) {
         this.setId(Utils.getIdFromString(mContext, componentElement.getItem_id()));
+        int margin = (int) mContext.getResources().getDimension(R.dimen.dimen_2_dp);
+        int padding = (int) mContext.getResources().getDimension(R.dimen.dimen_2_dp);
+
+        this.setPadding(padding, padding, padding, padding);
+        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) this.getLayoutParams();
+        params.setMargins(margin, margin, margin, margin);
         /*ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(getContext(),
                 R.layout.blueprint_spinner_item, componentElement.getComponent_data());
         setAdapter(spinnerArrayAdapter);

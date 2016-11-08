@@ -56,7 +56,8 @@ public class ScreenGenerator {
     public static void createContainers(ContainerElement[] containerElements, ViewGroup mParentLayout, String parent_item_orientation) {
         for (ContainerElement containerElement : containerElements) {
 //            LinearLayout containerLayout = new LinearLayout(mContext);
-            if(containerElement.getContainer_type().equalsIgnoreCase(Constants.ContainerType.ADAPTER_ITEM_LAYOUT)) {
+            if(containerElement.getContainer_type() != null
+                && Constants.ContainerType.ADAPTER_ITEM_LAYOUT.equalsIgnoreCase(containerElement.getContainer_type())) {
                 continue;
             }
             if(Constants.ContainerName.TOOLBAR.equalsIgnoreCase(containerElement.getContainer_name())) {

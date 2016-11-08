@@ -81,7 +81,6 @@ public class BluePrintButtonView extends Button {
     public void setComponentColors(ComponentElement componentElement) {
         if (componentElement.getComponent_font_color() != null) {
             setTextColor(!componentElement.getComponent_font_color().isEmpty() ? Color.parseColor(componentElement.getComponent_font_color()) : ContextCompat.getColor(mContext, R.color.default_font_color));
-            setTextColor(ContextCompat.getColor(mContext, R.color.default_font_color));
         } else {
             setTextColor(ContextCompat.getColor(mContext, R.color.default_font_color));
         }

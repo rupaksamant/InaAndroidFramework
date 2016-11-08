@@ -1,5 +1,7 @@
 {
-  "configSettings": {
+  "grid": null,
+  "logger": null,
+  "application": {
     "apis": [
       {
         "api_url": "http://192.168.26.20:9010/api/User",
@@ -879,9 +881,5 @@
     "status_messages": [],
     "data_status_code": [],
     "keys": []
-  },
-  "queryData": {
-    "appId": "1"
-  },
-  "settingType": "Application"
+  }
 }

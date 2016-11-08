@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_gravity="center"
     android:layout_height="match_parent"
-    android:layout_marginTop="@dimen/dimen_5_dp"
     android:layout_width="match_parent"
+    android:gravity="center_vertical"
+    android:layout_margin="@dimen/dimen_1_dp"
     android:orientation="vertical"
-    android:weightSum="2">
+    >
 
     <blueprint.dynamic.framework.model.customwidgets.BluePrintTextView
         android:id="@+id/spinner_label"
         android:layout_alignParentLeft="true"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="8"
         android:layout_width="match_parent"
         android:textColor="@color/color_818085"
+        android:layout_margin="@dimen/dimen_1_dp"
         android:textSize="@dimen/dimen_16_sp" />
 
     <blueprint.dynamic.framework.model.customwidgets.BluePrintSpinner
@@ -22,7 +23,8 @@
         android:id="@+id/spinner_holder"
         android:layout_gravity="center_vertical|left"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:layout_width="match_parent"
+        android:layout_margin="@dimen/dimen_1_dp"
         android:textSize="@dimen/dimen_16_sp" />
 </LinearLayout>

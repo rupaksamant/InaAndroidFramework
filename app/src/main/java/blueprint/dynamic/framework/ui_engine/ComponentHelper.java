@@ -17,8 +17,8 @@ import blueprint.dynamic.framework.utils.Utils;
 public class ComponentHelper {
     public static void setLayoutParamsAndOrientation(Context context, View view, ComponentElement componentElement, String parent_orientation, int defaultHeight, int defaultWidth) {
         String weight = componentElement.getItem_weight();
-        int margin = (int) context.getResources().getDimension(R.dimen.dimen_5_dp);
-        int padding = (int) context.getResources().getDimension(R.dimen.dimen_5_dp);
+        int margin = (int) context.getResources().getDimension(R.dimen.dimen_2_dp);
+        int padding = (int) context.getResources().getDimension(R.dimen.dimen_2_dp);
 
         if (Constants.Orientation.HORIZONTAL.equalsIgnoreCase(parent_orientation)) {
             if (weight != null && weight.isEmpty() == false) {
@@ -45,7 +45,6 @@ public class ComponentHelper {
                         LinearLayout.LayoutParams.MATCH_PARENT);
                 params3.setMargins(margin, margin, margin, margin);
                 view.setLayoutParams(params3);
-                view.setPadding(padding, padding, padding, padding);
                 view.setPadding(padding, padding, padding, padding);
             }
         } else {

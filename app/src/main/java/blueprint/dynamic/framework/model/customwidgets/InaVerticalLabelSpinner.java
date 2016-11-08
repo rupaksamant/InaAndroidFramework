@@ -36,7 +36,7 @@ public class InaVerticalLabelSpinner {
 //        spinnerLayout.setId(Utils.getIdFromString(mContext, componentElement.getItem_id()));
 //        ComponentHelper.setLayoutParamsAndOrientation(mContext, spinnerLayout, componentElement, parent_orientation);
 
-//        spinnerLayout.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+        spinnerLayout.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
 
         BluePrintTextView label = (BluePrintTextView) spinnerLayout.findViewById(R.id.spinner_label);
         label.setContext(mContext);
@@ -46,6 +46,10 @@ public class InaVerticalLabelSpinner {
         spinner.setTag(componentElement.getComponents()[1]);
         spinner.setContext(mContext);
         spinner.setComponent(componentElement.getComponents()[1], spinnerLayout);
+
+        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) spinner.getLayoutParams();
+        params.weight = Float.parseFloat(componentElement.getComponents()[1].getItem_weight());
+        spinner.setLayoutParams(params);
 
         setComponentColors(componentElement, spinnerLayout);
 
