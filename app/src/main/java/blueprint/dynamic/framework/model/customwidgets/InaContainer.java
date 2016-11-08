@@ -111,7 +111,7 @@ public class InaContainer {
 
         } else if (Constants.ComponentType.SPINNER.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintSpinner spinner = new BluePrintSpinner(context);
-            spinner.setComponent(componentElement, container);
+            spinner.setComponent(componentElement, container, parent_orientation, true);
         } else if (Constants.ComponentType.TEXT_VIEW.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintTextView textView = new BluePrintTextView(context);
             textView.setComponent(componentElement, container, parent_orientation, true);

@@ -4,17 +4,13 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.support.v4.content.ContextCompat;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.dynamic.framework.R;
 
 import blueprint.dynamic.framework.model.cms_model.ComponentElement;
-import blueprint.dynamic.framework.ui_engine.ComponentHelper;
 import blueprint.dynamic.framework.utils.Utils;
 
 /**
@@ -45,7 +41,7 @@ public class InaVerticalLabelSpinner {
         BluePrintSpinner spinner = (BluePrintSpinner) spinnerLayout.findViewById(R.id.spinner_holder);
         spinner.setTag(componentElement.getComponents()[1]);
         spinner.setContext(mContext);
-        spinner.setComponent(componentElement.getComponents()[1], spinnerLayout);
+        spinner.setComponent(componentElement.getComponents()[1], spinnerLayout, parent_orientation, false);
 
         LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) spinner.getLayoutParams();
         params.weight = Float.parseFloat(componentElement.getComponents()[1].getItem_weight());

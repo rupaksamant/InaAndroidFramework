@@ -63,7 +63,7 @@ public class BluePrintButtonView extends Button {
 //            setLayoutParams(layoutParams);
         }
 
-        this.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+//        this.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
 
         if (componentElement.getComponent_label() != null) {
             setText(componentElement.getComponent_label());

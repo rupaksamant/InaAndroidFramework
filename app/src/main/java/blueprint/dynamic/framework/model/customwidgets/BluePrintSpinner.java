@@ -1,5 +1,6 @@
 package blueprint.dynamic.framework.model.customwidgets;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -14,6 +15,8 @@ import android.widget.LinearLayout;
 import com.dynamic.framework.R;
 
 import blueprint.dynamic.framework.model.cms_model.ComponentElement;
+import blueprint.dynamic.framework.ui_engine.ComponentHelper;
+import blueprint.dynamic.framework.utils.Constants;
 import blueprint.dynamic.framework.utils.Utils;
 
 /**
@@ -52,19 +55,27 @@ public class BluePrintSpinner  extends AppCompatSpinner {
         mContext = context;
     }
 
-    public void setComponent(ComponentElement componentElement, ViewGroup parentLayout) {
-        this.setId(Utils.getIdFromString(mContext, componentElement.getItem_id()));
-        int margin = (int) mContext.getResources().getDimension(R.dimen.dimen_2_dp);
-        int padding = (int) mContext.getResources().getDimension(R.dimen.dimen_2_dp);
+    public void setComponent(ComponentElement componentElement, ViewGroup parentLayout, String parent_orientation, boolean addToParent) {
 
-        this.setPadding(padding, padding, padding, padding);
-        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) this.getLayoutParams();
-        params.setMargins(margin, margin, margin, margin);
+        this.setId(Utils.getIdFromString(mContext, componentElement.getItem_id()));
+
+        int defaultHeight = Utils.pxTodp(((Activity) mContext), Constants.DefaultValue.SPINNER_HEIGHT);
+        int defaultWidth = Utils.pxTodp(((Activity) mContext), Constants.DefaultValue.SPINNER_WIDTH);
+        int defaultMargin = Utils.pxTodp(((Activity) mContext), Constants.DefaultValue.SPINNER_MARGIN);
+        int defaultPadding = Utils.pxTodp(((Activity) mContext), Constants.DefaultValue.SPINNER_PADDING);
+
+        ComponentHelper.setLayoutParamsAndOrientation(mContext, this, componentElement,
+                parent_orientation, defaultHeight, defaultWidth, defaultMargin, defaultPadding);
+
         /*ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(getContext(),
                 R.layout.blueprint_spinner_item, componentElement.getComponent_data());
         setAdapter(spinnerArrayAdapter);
         setSelection(0);
         parentLayout.addView(this);*/
+
+        if(addToParent && parentLayout != null) {
+            parentLayout.addView(this);
+        }
 
     }
 

@@ -90,7 +90,7 @@ public class InaLienarContainer extends LinearLayout {
 
         } else if (Constants.ComponentType.SPINNER.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintSpinner spinner = new BluePrintSpinner(mContext);
-            spinner.setComponent(componentElement, this);
+            spinner.setComponent(componentElement, this, parent_orientation, true);
         } else if (Constants.ComponentType.TEXT_VIEW.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintTextView textView = new BluePrintTextView(mContext);
             textView.setComponent(componentElement, this, parent_orientation, true);
