@@ -3,6 +3,7 @@ package blueprint.dynamic.framework.utils;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.text.SpannableString;
@@ -146,7 +147,7 @@ public class Utils {
      * Method to convert dp to pixels.
      *
      * @param context Actvitiy context
-     * @param dp      DP value that has to be converted to pixels
+     * @param px      DP value that has to be converted to pixels
      * @return pixel values from the dp value
      */
     public static int pxTodp(Activity context, int px) {
@@ -178,5 +179,37 @@ public class Utils {
 
     public static LayoutInflater getLayoutInflater(Context context) {
         return (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    }
+
+    public static int getFontStyle(String component_font_style) {
+        if(component_font_style != null && component_font_style.isEmpty() == false) {
+            if(component_font_style.equalsIgnoreCase(Constants.FontStyle.FONT_STYLE_BOLD)) {
+                return Typeface.BOLD;
+            } else if(component_font_style.equalsIgnoreCase(Constants.FontStyle.FONT_STYLE_NORMAL)) {
+                return Typeface.NORMAL;
+            } else if(component_font_style.equalsIgnoreCase(Constants.FontStyle.FONT_STYLE_ITALIC)) {
+                return Typeface.ITALIC;
+            } else if(component_font_style.equalsIgnoreCase(Constants.FontStyle.FONT_STYLE_BOLD_ITALIC)) {
+                return Typeface.BOLD_ITALIC;
+            }
+
+        }
+        return Typeface.NORMAL;
+    }
+
+    public static Typeface getTypeFace(String component_font_typeface) {
+        if(component_font_typeface != null && component_font_typeface.isEmpty() == false) {
+            if(component_font_typeface.equalsIgnoreCase(Constants.FontTypeFace.FONT_TYPEFACE_SERIF)) {
+                return Typeface.SERIF;
+            } else if(component_font_typeface.equalsIgnoreCase(Constants.FontTypeFace.FONT_TYPEFACE_SANS_SERIF)) {
+                return Typeface.SANS_SERIF;
+            } else if(component_font_typeface.equalsIgnoreCase(Constants.FontTypeFace.FONT_TYPEFACE_DEFAULT_BOLD)) {
+                return Typeface.DEFAULT_BOLD;
+            } else if(component_font_typeface.equalsIgnoreCase(Constants.FontTypeFace.FONT_TYPEFACE_MONOSPACE)) {
+                return Typeface.MONOSPACE;
+            }
+
+        }
+        return Typeface.DEFAULT;
     }
 }

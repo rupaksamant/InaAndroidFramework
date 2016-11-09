@@ -60,7 +60,10 @@ public class Constants {
         public static final int LABEL_WIDTH = 80;
 
         public static final int EDITTEXT_HEIGHT = 45;
-        public static final int EDITTEXT_WIDTH = 120;
+        public static final int EDITTEXT_WIDTH = 150;
+        public static final int EDITTEXT_MARGIN = 2;
+        public static final int EDITTEXT_PADDING = 2;
+        public static final int EDITTEXT_FONT_SIZE = 14;
 
         public static final int SPINNER_HEIGHT = 45;
         public static final int SPINNER_WIDTH = 100;
@@ -72,6 +75,7 @@ public class Constants {
 
         public static final int TEXT_VIEW_HEIGHT = 45;
         public static final int TEXT_VIEW_WIDTH = 80;
+        public static final int TEXT_VIEW_FONT_SIZE = 14;
         public static final int TEXT_VIEW_MARGIN = 2;
         public static final int TEXT_VIEW_PADDING = 2;
 
@@ -94,5 +98,20 @@ public class Constants {
         public static final String CONTAINER_BOTTOM = "bottom_container";
         public static final String CONTAINER_LEFT = "left_container";
         public static final String CONTAINER_RIGHT = "right_container";
+    }
+
+    public static class FontStyle {
+        public static final String FONT_STYLE_NORMAL = "font_normal";
+        public static final String FONT_STYLE_BOLD = "font_bold";
+        public static final String FONT_STYLE_ITALIC = "font_italic";
+        public static final String FONT_STYLE_BOLD_ITALIC = "font_bold_italic";
+    }
+
+    public static class FontTypeFace {
+        public static final String FONT_TYPEFACE_SERIF = "font_type_serif";
+        public static final String FONT_TYPEFACE_DEFAULT = "font_type_default";
+        public static final String FONT_TYPEFACE_DEFAULT_BOLD = "font_type_default_bold";
+        public static final String FONT_TYPEFACE_MONOSPACE = "font_type_monospace";
+        public static final String FONT_TYPEFACE_SANS_SERIF = "font_type_sans_serif";
     }
 }

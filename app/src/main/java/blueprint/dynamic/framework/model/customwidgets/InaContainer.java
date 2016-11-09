@@ -2,7 +2,6 @@ package blueprint.dynamic.framework.model.customwidgets;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.provider.Settings;
 import android.support.v4.content.ContextCompat;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -89,7 +88,7 @@ public class InaContainer {
 
         if (Constants.ComponentType.EDIT_TEXT.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintEditText editText = new BluePrintEditText(context);
-            editText.setComponent(componentElement, container);
+            editText.setComponent(componentElement, container, parent_orientation, true);
         } else if (Constants.ComponentType.BUTTON_VIEW.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintButtonView buttonView = new BluePrintButtonView(context);
             buttonView.setComponent(componentElement, container, parent_orientation);
@@ -97,11 +96,11 @@ public class InaContainer {
             InaImageView iamgeView = new InaImageView(context);
             iamgeView.setComponent(componentElement, container, parent_orientation, true);
         } else if (Constants.ComponentType.HORIZONTAL_ICON_LABEL.equalsIgnoreCase(componentElement.getComponent_type())) {
-            BluePrintEditText editText = new BluePrintEditText(context);
-            editText.setComponent(componentElement, container);
+//            BluePrintEditText editText = new BluePrintEditText(context);
+//            editText.setComponent(componentElement, container, parent_orientation, true);
         } else if (Constants.ComponentType.HORIZONTAL_ICON_LABEL.equalsIgnoreCase(componentElement.getComponent_type())) {
-            BluePrintEditText editText = new BluePrintEditText(context);
-            editText.setComponent(componentElement, container);
+//            BluePrintEditText editText = new BluePrintEditText(context);
+//            editText.setComponent(componentElement, container, parent_orientation, true);
         } else if (Constants.ComponentType.VERTICAL_LABEL_SPINNER.equalsIgnoreCase(componentElement.getComponent_type())) {
             InaVerticalLabelSpinner spinner = new InaVerticalLabelSpinner(context);
             spinner.setComponent(componentElement, container, parent_orientation);

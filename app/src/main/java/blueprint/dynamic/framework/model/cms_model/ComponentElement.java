@@ -7,169 +7,212 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ComponentElement {
-	private String component_key_name;
+    private String component_key_name;
 
- 	public void setComponent_key_name(String component_key_name) {
-		this.component_key_name = component_key_name;
-	}
+    public void setComponent_key_name(String component_key_name) {
+        this.component_key_name = component_key_name;
+    }
 
-	public String getComponent_key_name() {
-		return component_key_name;
-	}
+    public String getComponent_key_name() {
+        return component_key_name;
+    }
 
-	private String component_type;
+    private String component_type;
 
- 	public void setComponent_type(String component_type) {
-		this.component_type = component_type;
-	}
+    public void setComponent_type(String component_type) {
+        this.component_type = component_type;
+    }
 
-	public String getComponent_type() {
-		return component_type;
-	}
+    public String getComponent_type() {
+        return component_type;
+    }
 
-	private String component_label;
+    private String component_label;
 
- 	public void setComponent_label(String component_label) {
-		this.component_label = component_label;
-	}
+    public void setComponent_label(String component_label) {
+        this.component_label = component_label;
+    }
 
-	public String getComponent_label() {
-		return component_label;
-	}
+    public String getComponent_label() {
+        return component_label;
+    }
 
-	private String component_font_color;
+    private String component_font_color;
 
- 	public void setComponent_font_color(String component_font_color) {
-		this.component_font_color = component_font_color;
-	}
+    public void setComponent_font_color(String component_font_color) {
+        this.component_font_color = component_font_color;
+    }
 
-	public String getComponent_font_color() {
-		return component_font_color;
-	}
+    public String getComponent_font_color() {
+        return component_font_color;
+    }
 
-	private String component_background_color;
+    private String component_background_color;
 
- 	public void setComponent_background_color(String component_background_color) {
-		this.component_background_color = component_background_color;
-	}
+    public void setComponent_background_color(String component_background_color) {
+        this.component_background_color = component_background_color;
+    }
 
-	public String getComponent_background_color() {
-		return component_background_color;
-	}
+    public String getComponent_background_color() {
+        return component_background_color;
+    }
 
-	private ComponentElement[] components;
+    private ComponentElement[] components;
 
-	public void setComponents(ComponentElement[] components) {
-		this.components = components;
-	}
+    public void setComponents(ComponentElement[] components) {
+        this.components = components;
+    }
 
-	public ComponentElement[] getComponents() {
-		return components;
-	}
+    public ComponentElement[] getComponents() {
+        return components;
+    }
 
-	private String item_weight;
+    private String item_weight;
 
-	public void setItem_weight(String weight) {
-		this.item_weight = weight;
-	}
+    public void setItem_weight(String weight) {
+        this.item_weight = weight;
+    }
 
-	public String getItem_weight() {
-		return item_weight;
-	}
+    public String getItem_weight() {
+        return item_weight;
+    }
 
-	private String component_border_color;
+    private String component_border_color;
 
-	public void setComponent_border_color(String component_border_color) {
-		this.component_border_color = component_border_color;
-	}
+    public void setComponent_border_color(String component_border_color) {
+        this.component_border_color = component_border_color;
+    }
 
-	public String getComponent_border_color() {
-		return component_border_color;
-	}
+    public String getComponent_border_color() {
+        return component_border_color;
+    }
 
-	private String[] component_data;
+    private String[] component_data;
 
-	public void setComponent_data(String[] component_data) {
-		this.component_data = component_data;
-	}
+    public void setComponent_data(String[] component_data) {
+        this.component_data = component_data;
+    }
 
-	public String[] getComponent_data() {
-		return component_data;
-	}
+    public String[] getComponent_data() {
+        return component_data;
+    }
 
-	private String weight_sum;
+    private String weight_sum;
 
-	public void setWeight_sum(String weight_sum) {
-		this.weight_sum = weight_sum;
-	}
+    public void setWeight_sum(String weight_sum) {
+        this.weight_sum = weight_sum;
+    }
 
-	public String getWeight_sum() {
-		return weight_sum;
-	}
+    public String getWeight_sum() {
+        return weight_sum;
+    }
 
-	private String item_id;
+    private String item_id;
 
-	public void setItem_id(String item_id) {
-		this.item_id = item_id;
-	}
+    public void setItem_id(String item_id) {
+        this.item_id = item_id;
+    }
 
-	public String getItem_id() {
-		return item_id;
-	}
+    public String getItem_id() {
+        return item_id;
+    }
 
-	private ApiElement[] apis;
+    private ApiElement[] apis;
 
-	public void setApis(ApiElement[] apis) {
-		this.apis = apis;
-	}
+    public void setApis(ApiElement[] apis) {
+        this.apis = apis;
+    }
 
-	public ApiElement[] getApis() {
-		return apis;
-	}
+    public ApiElement[] getApis() {
+        return apis;
+    }
 
-	private ContainerElement[] container;
+    private ContainerElement[] container;
 
-	public void setContainer(ContainerElement[] container) {
-		this.container = container;
-	}
+    public void setContainer(ContainerElement[] container) {
+        this.container = container;
+    }
 
-	public ContainerElement[] getContainer() {
-		return container;
-	}
+    public ContainerElement[] getContainer() {
+        return container;
+    }
 
-	private String[] item_data;
+    private String[] item_data;
 
-	public String[] getItem_data ()
-	{
-		return item_data;
-	}
+    public String[] getItem_data() {
+        return item_data;
+    }
 
-	public void setItem_data (String[] item_data)
-	{
-		this.item_data = item_data;
-	}
+    public void setItem_data(String[] item_data) {
+        this.item_data = item_data;
+    }
 
-	private String item_title;
+    private String item_title;
 
-	public String getItem_title ()
-	{
-		return item_title;
-	}
+    public String getItem_title() {
+        return item_title;
+    }
 
-	public void setItem_title (String item_title)
-	{
-		this.item_title = item_title;
-	}
+    public void setItem_title(String item_title) {
+        this.item_title = item_title;
+    }
 
-	private String component_icon;
+    private String component_icon;
 
-	public String getComponent_icon ()
-	{
-		return component_icon;
-	}
+    public String getComponent_icon() {
+        return component_icon;
+    }
 
-	public void setComponent_icon (String icon)
-	{
-		this.component_icon = icon;
-	}
+    public void setComponent_icon(String icon) {
+        this.component_icon = icon;
+    }
+
+    private String component_hint_font_color;
+
+    public String getComponent_hint_font_color() {
+        return component_hint_font_color;
+    }
+
+    public void setComponent_hint_font_color(String value) {
+        this.component_hint_font_color = value;
+    }
+
+    private String component_hint;
+
+    public String getComponent_hint() {
+        return component_hint;
+    }
+
+    public void setComponent_hint(String value) {
+        this.component_hint = value;
+    }
+
+
+    private String component_font_size;
+
+    public String getComponent_font_size() {
+        return component_font_size;
+    }
+
+    public void setComponent_font_size(String value) {
+        this.component_font_size = value;
+    }
+    private String component_font_typeface;
+
+    public String getComponent_font_typeface() {
+        return component_font_typeface;
+    }
+
+    public void setComponent_font_typeface(String value) {
+        this.component_font_typeface = value;
+    }
+    private String component_font_style;
+
+    public String getComponent_font_style() {
+        return component_font_style;
+    }
+
+    public void setComponent_font_style(String value) {
+        this.component_font_style = value;
+    }
 }

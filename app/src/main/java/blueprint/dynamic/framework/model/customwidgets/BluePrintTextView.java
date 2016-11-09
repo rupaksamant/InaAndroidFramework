@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.ViewGroup;
 
@@ -59,12 +61,16 @@ public class BluePrintTextView extends AppCompatTextView {
 
     public void setComponent(ComponentElement componentElement, ViewGroup parentLayout,
                              String parent_orientation, boolean addToParent) {
+
         System.out.println("BluePrintTextView.setContainer---tv id---:"+Utils.getIdFromString(mContext, componentElement.getItem_id()));
+
         this.setId(Utils.getIdFromString(mContext, componentElement.getItem_id()));
+
         int defaultHeight = Utils.pxTodp(((Activity) mContext), Constants.DefaultValue.TEXT_VIEW_HEIGHT);
         int defaultWidth = Utils.pxTodp(((Activity) mContext), Constants.DefaultValue.TEXT_VIEW_WIDTH);
         int defaultMargin = Utils.pxTodp(((Activity) mContext), Constants.DefaultValue.TEXT_VIEW_MARGIN);
         int defaultPadding = Utils.pxTodp(((Activity) mContext), Constants.DefaultValue.TEXT_VIEW_PADDING);
+
         ComponentHelper.setLayoutParamsAndOrientation(mContext, this, componentElement, parent_orientation,
                 defaultHeight, defaultWidth, defaultMargin, defaultPadding);
 
@@ -84,8 +90,34 @@ public class BluePrintTextView extends AppCompatTextView {
             setText(componentElement.getComponent_label());
         }
 
+        if (componentElement.getComponent_font_size() != null) {
+            setTextSize(TypedValue.COMPLEX_UNIT_SP,
+                    componentElement.getComponent_font_size().isEmpty()
+                            ? Constants.DefaultValue.TEXT_VIEW_FONT_SIZE : Integer.parseInt(componentElement.getComponent_font_size()));
+        }
+
+        // bold / italic/ normal , bolditalic
+//        if (componentElement.getComponent_font_style() != null) {
+//            setTypeface(null, Utils.getFontStyle(componentElement.getComponent_font_style()));
+//        }
+
+        // Sans, serif,
+//        if (componentElement.getComponent_font_typeface() != null) {
+            setTypeface(Utils.getTypeFace(componentElement.getComponent_font_typeface()), Utils.getFontStyle(componentElement.getComponent_font_style()));
+//        }
+
+        if (componentElement.getComponent_label() != null) {
+            setText(componentElement.getComponent_label());
+        }
+
+        if (componentElement.getComponent_label() != null) {
+            setText(componentElement.getComponent_label());
+        }
+
         setComponentColors(componentElement);
+
         System.out.println("BluePrintTextView.setContainer---"+componentElement.getComponent_label());
+
         if(addToParent && parentLayout != null) {
             parentLayout.addView(this);
         }

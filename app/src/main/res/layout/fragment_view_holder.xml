@@ -6,19 +6,22 @@
     android:clickable="true"
     android:orientation="vertical"
     android:weightSum="1">
-    <!--<LinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_0_dp"
-        android:layout_weight=".5"
-        android:background="@color/color_000000_80"
+        android:layout_weight=".1"
+        android:background="#FFFFFF"
         android:gravity="center_horizontal"
         android:orientation="vertical">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:background="@drawable/icn_pierian"/>
-        </LinearLayout>-->
+
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:text="Name"
+            android:ems="10"
+            android:id="@+id/editText" />
+    </LinearLayout>
     <!--<HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

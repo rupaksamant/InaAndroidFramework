@@ -74,16 +74,16 @@ public class InaLienarContainer extends LinearLayout {
 
         if (Constants.ComponentType.EDIT_TEXT.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintEditText editText = new BluePrintEditText(mContext);
-            editText.setComponent(componentElement, this);
+            editText.setComponent(componentElement, this, parent_orientation, true);
         } else if (Constants.ComponentType.BUTTON_VIEW.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintButtonView buttonView = new BluePrintButtonView(mContext);
             buttonView.setComponent(componentElement, this, parent_orientation);
         } else if (Constants.ComponentType.HORIZONTAL_ICON_LABEL.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintEditText editText = new BluePrintEditText(mContext);
-            editText.setComponent(componentElement, this);
+            editText.setComponent(componentElement, this, parent_orientation, true);
         } else if (Constants.ComponentType.HORIZONTAL_ICON_LABEL.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintEditText editText = new BluePrintEditText(mContext);
-            editText.setComponent(componentElement, this);
+            editText.setComponent(componentElement, this, parent_orientation, true);
         } else if (Constants.ComponentType.HORIZONTAL_LABEL_ICON.equalsIgnoreCase(componentElement.getComponent_type())) {
 
         } else if (Constants.ComponentType.HORIZONTAL_LABEL_LABEL.equalsIgnoreCase(componentElement.getComponent_type())) {

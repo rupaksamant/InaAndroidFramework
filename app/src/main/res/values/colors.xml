@@ -9,6 +9,7 @@
     <color name="color_ffffff">#ffffff</color>
     <color name="color_818085">#818085</color>
     <color name="default_font_color">#36514D</color>
+    <color name="default_hint_font_color">#E3E3E3</color>
     <color name="color_727076">#727076</color>
     <color name="color_588aae">#588aae</color>
     <color name="color_6eacda">#6eacda</color>
