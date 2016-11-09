@@ -40,7 +40,12 @@ public class InaHorizontalLabelLabel {
         InaContainer.setBackgroundColor(mParentView, mContext, parentComponent.getComponent_background_color(), R.color.container_defualt_color);
 
         LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) linearLayout.getLayoutParams();
-        params.weight = Float.parseFloat(parentComponent.getItem_weight());
+        if(params == null) {
+            params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        }
+        if(parentComponent.getItem_weight() != null) {
+            params.weight = Float.parseFloat(parentComponent.getItem_weight());
+        }
         linearLayout.setLayoutParams(params);
     }
 

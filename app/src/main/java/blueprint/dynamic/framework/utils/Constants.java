@@ -81,8 +81,8 @@ public class Constants {
 
         public static final int IAMGE_VIEW_HEIGHT = 100;
         public static final int IAMGE_VIEW_WIDTH = 100;
-        public static final int IAMGE_VIEW_MARGIN = 0;
-        public static final int IAMGE_VIEW_PADDING = 0;
+        public static final int IAMGE_VIEW_MARGIN = 1;
+        public static final int IAMGE_VIEW_PADDING = 1;
     }
 
     public static class ContainerName {

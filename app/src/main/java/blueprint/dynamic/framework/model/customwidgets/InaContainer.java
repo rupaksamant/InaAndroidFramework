@@ -107,6 +107,13 @@ public class InaContainer {
         } else if (Constants.ComponentType.HORIZONTAL_LABEL_ICON.equalsIgnoreCase(componentElement.getComponent_type())) {
 
         } else if (Constants.ComponentType.HORIZONTAL_LABEL_LABEL.equalsIgnoreCase(componentElement.getComponent_type())) {
+            InaHorizontalLabelLabel component = new InaHorizontalLabelLabel(context);
+            component.setComponent(componentElement, container);
+//            BluePrintTextView leftTextView = new BluePrintTextView(context);
+//            leftTextView.setComponent(componentElement, container, parent_orientation, true);
+//
+//            BluePrintTextView rightTextView = new BluePrintTextView(context);
+//            rightTextView.setComponent(componentElement, container, parent_orientation, true);
 
         } else if (Constants.ComponentType.SPINNER.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintSpinner spinner = new BluePrintSpinner(context);

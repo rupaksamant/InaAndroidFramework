@@ -63,11 +63,13 @@ public class BluePrintButtonView extends Button {
 //            setLayoutParams(layoutParams);
         }
 
-//        this.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+        this.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
 
         if (componentElement.getComponent_label() != null) {
             setText(componentElement.getComponent_label());
         }
+
+        setTypeface(Utils.getTypeFace(componentElement.getComponent_font_typeface()), Utils.getFontStyle(componentElement.getComponent_font_style()));
 
         setComponentColors(componentElement);
         System.out.println("BluePrintTextView.setContainer---"+componentElement.getComponent_label());
