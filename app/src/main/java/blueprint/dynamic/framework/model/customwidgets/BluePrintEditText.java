@@ -10,8 +10,6 @@ import android.text.InputType;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 import com.dynamic.framework.R;
 
@@ -41,7 +39,7 @@ public class BluePrintEditText extends AppCompatEditText {
         mContext = context;
     }
 
-    public void setComponent(ComponentElement componentElement, ViewGroup view, String parent_orientation, boolean b) {
+    public void setComponent(ComponentElement componentElement, ViewGroup view, String parent_orientation, boolean addToParent) {
         this.setId(Utils.getIdFromString(mContext, componentElement.getItem_id()));
         /*if(view instanceof LinearLayout) {
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -61,7 +59,7 @@ public class BluePrintEditText extends AppCompatEditText {
         int defaultPadding = Utils.pxTodp(((Activity) mContext), Constants.DefaultValue.EDITTEXT_PADDING);
 
         ComponentHelper.setLayoutParamsAndOrientation(mContext, this, componentElement, parent_orientation,
-                defaultHeight, defaultWidth, defaultMargin, defaultPadding);
+                defaultHeight, defaultWidth, defaultMargin, defaultPadding, addToParent);
 
         if(componentElement.getComponent_label() != null) {
             setHint(componentElement.getComponent_label());

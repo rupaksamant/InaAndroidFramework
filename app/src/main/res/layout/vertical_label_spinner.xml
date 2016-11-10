@@ -13,14 +13,15 @@
         android:layout_weight="5"
         android:text="test"
         android:layout_width="match_parent"
-        android:gravity="center"
+        android:gravity="center_vertical"
         android:textColor="@color/color_818085"
+        android:paddingLeft="@dimen/dimen_10_dp"
         android:layout_margin="@dimen/dimen_1_dp"
         android:textSize="@dimen/dimen_16_sp" />
 
     <blueprint.dynamic.framework.model.customwidgets.BluePrintSpinner
         android:drawableRight="@android:drawable/arrow_down_float"
-        android:gravity="center"
+        android:gravity="center_vertical"
         android:id="@+id/spinner_holder"
         android:layout_height="0dp"
         android:layout_width="match_parent"

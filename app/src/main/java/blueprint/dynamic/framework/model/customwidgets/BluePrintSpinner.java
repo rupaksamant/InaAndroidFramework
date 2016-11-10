@@ -9,8 +9,6 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.AppCompatSpinner;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 
 import com.dynamic.framework.R;
 
@@ -65,7 +63,7 @@ public class BluePrintSpinner  extends AppCompatSpinner {
         int defaultPadding = Utils.pxTodp(((Activity) mContext), Constants.DefaultValue.SPINNER_PADDING);
 
         ComponentHelper.setLayoutParamsAndOrientation(mContext, this, componentElement,
-                parent_orientation, defaultHeight, defaultWidth, defaultMargin, defaultPadding);
+                parent_orientation, defaultHeight, defaultWidth, defaultMargin, defaultPadding, addToParent);
 
         /*ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(getContext(),
                 R.layout.blueprint_spinner_item, componentElement.getComponent_data());

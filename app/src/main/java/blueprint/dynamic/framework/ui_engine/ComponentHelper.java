@@ -19,7 +19,7 @@ public class ComponentHelper {
     public static void setLayoutParamsAndOrientation(Context context, View view,
                                                      ComponentElement componentElement, String parent_orientation,
                                                      int defaultHeight, int defaultWidth,
-                                                     int defaultMargin, int defaultPadding) {
+                                                     int defaultMargin, int defaultPadding, boolean addToParent) {
         String weight = componentElement.getItem_weight();
 //        int margin = (int) context.getResources().getDimension(R.dimen.dimen_2_dp);
 //        int padding = (int) context.getResources().getDimension(R.dimen.dimen_2_dp);
@@ -59,10 +59,10 @@ public class ComponentHelper {
         }
 
         params.setMargins(defaultMargin, defaultMargin, defaultMargin, defaultMargin);
-        params.gravity = (Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
-
-
-        view.setPadding(defaultPadding, defaultPadding, defaultPadding, defaultPadding);
+        if(addToParent) {
+            params.gravity = (Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+            view.setPadding(defaultPadding, defaultPadding, defaultPadding, defaultPadding);
+        }
         view.setLayoutParams(params);
 
         view.setMinimumWidth(defaultWidth);

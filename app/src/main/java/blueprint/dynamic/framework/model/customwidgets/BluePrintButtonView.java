@@ -41,7 +41,7 @@ public class BluePrintButtonView extends Button {
     }
 
     public void setComponent(ComponentElement componentElement, ViewGroup parentLayout,
-                             String parent_orientation) {
+                             String parent_orientation, boolean addToParent) {
         System.out.println("BluePrintButtonView.setContainer-id---:"+Utils.getIdFromString(mContext, componentElement.getItem_id()));
         this.setId(Utils.getIdFromString(mContext, componentElement.getItem_id()));
 
@@ -51,7 +51,7 @@ public class BluePrintButtonView extends Button {
         int defaultPadding = Utils.pxTodp(((Activity) mContext), Constants.DefaultValue.BUTTUON_VIEW_PADDING);
 
         ComponentHelper.setLayoutParamsAndOrientation(mContext, this, componentElement,
-                parent_orientation, defaultHeight, defaultWidth, defaultMargin, defaultPadding);
+                parent_orientation, defaultHeight, defaultWidth, defaultMargin, defaultPadding, addToParent);
 
         if (parentLayout instanceof LinearLayout) {
 //            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);

@@ -64,8 +64,8 @@ public class InaImageView extends AppCompatImageView {
                 defaultHeight,
                 defaultWidth,
                 defaultMargin,
-                defaultPadding
-        );
+                defaultPadding,
+                addToParent);
 
         setComponentColors(componentElement);
 

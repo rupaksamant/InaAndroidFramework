@@ -91,7 +91,7 @@ public class InaContainer {
             editText.setComponent(componentElement, container, parent_orientation, true);
         } else if (Constants.ComponentType.BUTTON_VIEW.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintButtonView buttonView = new BluePrintButtonView(context);
-            buttonView.setComponent(componentElement, container, parent_orientation);
+            buttonView.setComponent(componentElement, container, parent_orientation, true);
         } else if (Constants.ComponentType.IMAGE_VIEW.equalsIgnoreCase(componentElement.getComponent_type())) {
             InaImageView iamgeView = new InaImageView(context);
             iamgeView.setComponent(componentElement, container, parent_orientation, true);

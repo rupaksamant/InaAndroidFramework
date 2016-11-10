@@ -72,7 +72,7 @@ public class BluePrintTextView extends AppCompatTextView {
         int defaultPadding = Utils.pxTodp(((Activity) mContext), Constants.DefaultValue.TEXT_VIEW_PADDING);
 
         ComponentHelper.setLayoutParamsAndOrientation(mContext, this, componentElement, parent_orientation,
-                defaultHeight, defaultWidth, defaultMargin, defaultPadding);
+                defaultHeight, defaultWidth, defaultMargin, defaultPadding, addToParent);
 
 //        if (parentLayout instanceof LinearLayout) {
 //            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -84,7 +84,9 @@ public class BluePrintTextView extends AppCompatTextView {
 //            setLayoutParams(layoutParams);
 //        }
 
-        this.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+        if(addToParent) {
+            this.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+        }
 
         if (componentElement.getComponent_label() != null) {
             setText(componentElement.getComponent_label());
