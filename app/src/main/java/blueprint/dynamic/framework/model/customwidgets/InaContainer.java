@@ -109,12 +109,6 @@ public class InaContainer {
         } else if (Constants.ComponentType.HORIZONTAL_LABEL_LABEL.equalsIgnoreCase(componentElement.getComponent_type())) {
             InaHorizontalLabelLabel component = new InaHorizontalLabelLabel(context);
             component.setComponent(componentElement, container);
-//            BluePrintTextView leftTextView = new BluePrintTextView(context);
-//            leftTextView.setComponent(componentElement, container, parent_orientation, true);
-//
-//            BluePrintTextView rightTextView = new BluePrintTextView(context);
-//            rightTextView.setComponent(componentElement, container, parent_orientation, true);
-
         } else if (Constants.ComponentType.SPINNER.equalsIgnoreCase(componentElement.getComponent_type())) {
             BluePrintSpinner spinner = new BluePrintSpinner(context);
             spinner.setComponent(componentElement, container, parent_orientation, true);
@@ -124,11 +118,8 @@ public class InaContainer {
         } else if (Constants.ComponentType.VERTICAL_LABEL_EDIT_TEXT.equalsIgnoreCase(componentElement.getComponent_type())) {
 
         } else if (Constants.ComponentType.VERTICAL_LABEL_LABEL.equalsIgnoreCase(componentElement.getComponent_type())) {
-            BluePrintTextView leftTextView = new BluePrintTextView(context);
-            leftTextView.setComponent(componentElement, container, parent_orientation, true);
-
-            BluePrintTextView rightTextView = new BluePrintTextView(context);
-            rightTextView.setComponent(componentElement, container, parent_orientation, true);
+            InaVerticalLabelLabel component = new InaVerticalLabelLabel(context);
+            component.setComponent(componentElement, container);
         }
     }
 
@@ -148,31 +139,21 @@ public class InaContainer {
             if (weight != null && weight.isEmpty() == false) {
                 params = new LinearLayout.LayoutParams(0,
                         ViewGroup.LayoutParams.MATCH_PARENT, Float.parseFloat(weight));
-                params.setMargins(margin, margin, margin, margin);
-                mContainer.setLayoutParams(params);
             } else {
                 params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                         ViewGroup.LayoutParams.MATCH_PARENT);
-//                params.setMargins(margin, margin, margin, margin);
-//                mContainer.setLayoutParams(params);
             }
         } else if (Constants.Orientation.VERTICAL.equalsIgnoreCase(parent_item_orientation)) {
             if (weight != null && weight.isEmpty() == false) {
                 params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                         0, Float.parseFloat(weight));
-//                params.setMargins(margin, margin, margin, margin);
-//                mContainer.setLayoutParams(params);
             } else {
                 params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                         ViewGroup.LayoutParams.MATCH_PARENT);
-//                params.setMargins(margin, margin, margin, margin);
-//                mContainer.setLayoutParams(params);
             }
         } else {
             params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.MATCH_PARENT);
-//            params.setMargins(margin, margin, margin, margin);
-//            mContainer.setLayoutParams(params);
         }
 
         params.setMargins(margin, margin, margin, margin);

@@ -53,8 +53,8 @@ public class InaHorizontalLabelLabel {
 
         ComponentElement[] componentElements = parentComponent.getComponents();
 
-        BluePrintTextView leftLabel = (BluePrintTextView) mParentView.findViewById(R.id.left_label);
-        BluePrintTextView rightLabel = (BluePrintTextView) mParentView.findViewById(R.id.right_label);
+        BluePrintTextView leftLabel = (BluePrintTextView) mParentView.findViewById(R.id.label_left);
+        BluePrintTextView rightLabel = (BluePrintTextView) mParentView.findViewById(R.id.label_right);
 
         ComponentElement leftComponent = componentElements[0];
         ComponentElement rightComponent = componentElements[1];

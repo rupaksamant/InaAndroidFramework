@@ -58,9 +58,10 @@ public class ComponentHelper {
 //            view.setLayoutParams(params);
         }
 
-        params.setMargins(defaultMargin, defaultMargin, defaultMargin, defaultMargin);
+
         if(addToParent) {
             params.gravity = (Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+            params.setMargins(defaultMargin, defaultMargin, defaultMargin, defaultMargin);
             view.setPadding(defaultPadding, defaultPadding, defaultPadding, defaultPadding);
         }
         view.setLayoutParams(params);

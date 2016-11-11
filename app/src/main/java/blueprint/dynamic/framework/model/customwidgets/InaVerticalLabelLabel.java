@@ -1,57 +1,71 @@
 package blueprint.dynamic.framework.model.customwidgets;
 
 import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.dynamic.framework.R;
 
 import blueprint.dynamic.framework.model.cms_model.ComponentElement;
+import blueprint.dynamic.framework.utils.Constants;
 import blueprint.dynamic.framework.utils.Utils;
 
 /**
  * Created by Techjini on 10/10/2016.
  */
-public class InaVerticalLabelLabel /*extends View*/ {
+public class InaVerticalLabelLabel {
 
+    private ViewGroup mParentView;
     private Context mContext;
 
     public InaVerticalLabelLabel(Context context) {
-//        super(context);
         mContext = context;
+        mParentView = (ViewGroup) Utils.getLayoutInflater(mContext).inflate(R.layout.vertical_label_label, null);
     }
 
-    /*public InaVerticalLabelLabel(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        mContext = context;
+    public void setComponent(ComponentElement parentComponent, ViewGroup container) {
+
+        setPropertyOfParent(parentComponent);
+
+        setPropertyOfChildComponents(parentComponent);
+
+        container.addView(mParentView);
     }
 
-    public InaVerticalLabelLabel(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-        mContext = context;
-    }*/
+    public void setPropertyOfParent(ComponentElement componentElement) {
 
-    public void setComponent(ComponentElement component, ViewGroup parentView, String parent_orientation) {
-//        this.setId(Utils.getNextUniqueIndex());
+        LinearLayout linearLayout = (LinearLayout) mParentView.findViewById(R.id.vertical_label_label_parent);
 
-        LayoutInflater inflater = (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        InaContainer.setBackgroundColor(mParentView, mContext, componentElement.getComponent_background_color(), R.color.container_defualt_color);
 
-        LinearLayout view = (LinearLayout) inflater.inflate(R.layout.vertical_label_label, parentView, true);
-        view.setId(Utils.getNextUniqueIndex());
-
-        if(component.getItem_weight() != null) {
-            LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) view.getLayoutParams();
-            params.weight = Float.parseFloat(component.getItem_weight());
-            view.setLayoutParams(params);
+        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) linearLayout.getLayoutParams();
+        if(params == null) {
+            params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         }
+        if(componentElement.getItem_weight() != null) {
+            params.weight = Float.parseFloat(componentElement.getItem_weight());
+        }
+        linearLayout.setLayoutParams(params);
+    }
 
-        BluePrintTextView topText = (BluePrintTextView) view.findViewById(R.id.lable_top);
-        BluePrintTextView bottomText = (BluePrintTextView) view.findViewById(R.id.lable_bottom);
+    public void setPropertyOfChildComponents(ComponentElement parentComponent) {
 
-//        topText.setContainer(component.getComponents()[0], view, parent_orientation);
-//        bottomText.setContainer(component.getComponents()[1], view, parent_orientation);
+        ComponentElement[] componentElements = parentComponent.getComponents();
 
-//        parentView.addView(view);
+        BluePrintTextView topLabel = (BluePrintTextView) mParentView.findViewById(R.id.label_top);
+        BluePrintTextView bottomLabel = (BluePrintTextView) mParentView.findViewById(R.id.label_bottom);
+
+        ComponentElement leftComponent = componentElements[0];
+        ComponentElement rightComponent = componentElements[1];
+
+        topLabel.setContext(mContext);
+        topLabel.setComponent(leftComponent, mParentView, Constants.Orientation.VERTICAL, false);
+
+        topLabel.setTag(leftComponent);
+
+        bottomLabel.setContext(mContext);
+        bottomLabel.setComponent(rightComponent, mParentView, Constants.Orientation.VERTICAL, false);
+
+        bottomLabel.setTag(rightComponent);
     }
 }

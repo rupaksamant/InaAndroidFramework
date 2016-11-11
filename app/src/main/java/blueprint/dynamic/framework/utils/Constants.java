@@ -15,8 +15,8 @@ public class Constants {
         public static final String HORIZONTAL_LABEL_LABEL = "horizontal_label_label";
         public static final String HORIZONTAL_LABEL_ICON = "horizontal_label_icon";
         public static final String HORIZONTAL_ICON_LABEL = "horizontal_icon_label";
-        public static final String VERTICAL_LABEL_LABEL = "vertical_lable_label";
-        public static final String VERTICAL_LABEL_EDIT_TEXT = "vertical_lable_edit_text";
+        public static final String VERTICAL_LABEL_LABEL = "vertical_label_label";
+        public static final String VERTICAL_LABEL_EDIT_TEXT = "vertical_label_edit_text";
         public static final String VERTICAL_LABEL_SPINNER = "vertical_label_spinner";
     }
 

@@ -10,21 +10,23 @@
         >
 
         <blueprint.dynamic.framework.model.customwidgets.BluePrintTextView
-            android:id="@+id/left_label"
+            android:id="@+id/label_left"
             android:layout_width="@dimen/dimen_0_dp"
             android:layout_height="wrap_content"
             android:layout_weight=".5"
             android:text="left"
             android:textColor="@color/color_818085"
-            android:textSize="@dimen/dimen_12_sp" />
+            android:padding="@dimen/dimen_5_dp"
+            android:textSize="@dimen/dimen_14_sp" />
 
         <blueprint.dynamic.framework.model.customwidgets.BluePrintTextView
-            android:id="@+id/right_label"
+            android:id="@+id/label_right"
             android:layout_width="@dimen/dimen_0_dp"
             android:layout_height="wrap_content"
             android:layout_weight=".5"
             android:text="right"
-            android:textColor="@color/color_36415D"
+            android:padding="@dimen/dimen_5_dp"
+            android:textColor="@color/color_818085"
             android:textSize="@dimen/dimen_14_sp" />
     </LinearLayout>
 </layout>
